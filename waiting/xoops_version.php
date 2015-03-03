@@ -46,7 +46,6 @@ $modversion['dirmoduleadmin'] = '/Frameworks/moduleclasses/moduleadmin';
 $modversion['icons16'] = '../../Frameworks/moduleclasses/icons/16';
 $modversion['icons32'] = '../../Frameworks/moduleclasses/icons/32';
 
-
 //about
 $modversion['release_date']     = '2013/04/25';
 $modversion["module_website_url"] = "www.xoops.org/";
@@ -76,7 +75,5 @@ $modversion['blocks'][1]['options'] = '1|5';
 
 // On Update
 if( ! empty( $_POST['fct'] ) && ! empty( $_POST['op'] ) && $_POST['fct'] == 'modulesadmin' && $_POST['op'] == 'update_ok' && $_POST['dirname'] == $modversion['dirname'] ) {
-	include dirname( __FILE__ ) . "/include/updateblock.inc.php" ;
+    include dirname( __FILE__ ) . "/include/updateblock.inc.php" ;
 }
-
-?>

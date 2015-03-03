@@ -42,4 +42,3 @@ function b_waiting_tdmdownloads()
     
     return $ret;
 }
-?>
