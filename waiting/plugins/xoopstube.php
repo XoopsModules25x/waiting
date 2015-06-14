@@ -13,7 +13,7 @@ function b_waiting_xoopstube() {
  $result = $xoopsDB->query("SELECT COUNT(*) FROM ".$xoopsDB->prefix("xoopstube_videos")." WHERE status=0");
  if ( $result ) { $block['adminlink'] = XOOPS_URL."/modules/xoopstube/admin/newvideos.php";
  list($block['pendingnum']) = $xoopsDB->fetchRow($result); $block['lang_linkname'] = _PI_WAITING_WAITINGS ;
- } 
+ }
  $ret[] = $block ;
  // xoopstube broken
  $block = array();
@@ -31,6 +31,6 @@ function b_waiting_xoopstube() {
  $block['lang_linkname'] = _PI_WAITING_MODREQS ;
  }
  $ret[] = $block ;
+
  return $ret;
  }
- ?>
