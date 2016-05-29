@@ -1,16 +1,16 @@
 <{foreach item=module from=$block.modules}>
 <b><{$module.name}></b>
-<ul>
-  <{foreach item=pending from=$module.pending}>
+  <{foreach item=pending from=$module.pending name=pendinglp}>
+  <{if $smarty.foreach.pendinglp.first}><ul><{/if}>
   <li>
     <a href="<{$pending.adminlink}>"><{$pending.lang_linkname}></a>:
 
     <{if $pending.pendingnum}>
-      <span style='font-weight:bold;color:#ff0000;'><{$pending.pendingnum}></span>
+      <span class='bold red'><{$pending.pendingnum}></span>
     <{else}>
       <{$pending.pendingnum}>
     <{/if}>
   </li>
+  <{if $smarty.foreach.pendinglp.last}></ul><{/if}>
   <{/foreach}>
-</ul>
 <{/foreach}>
