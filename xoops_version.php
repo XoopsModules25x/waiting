@@ -25,7 +25,7 @@
 
 $moduleDirName                    = basename(__DIR__);
 $modversion['name']               = _MI_WAITING_NAME;
-$modversion['version']            = 0.98;
+$modversion['version']            = 1.06;
 $modversion['description']        = _MI_WAITING_DESC;
 $modversion['author']             = 'Ryuji (http://ryus.co.jp/)';
 $modversion['author_website_url'] = 'http://ryus.co.jp';
@@ -42,10 +42,10 @@ $modversion['icons16']        = '../../Frameworks/moduleclasses/icons/16';
 $modversion['icons32']        = '../../Frameworks/moduleclasses/icons/32';
 
 //about
-$modversion['release_date']        = '2016/05/16';
+$modversion['release_date']        = '2016/05/30';
 $modversion['module_website_url']  = 'www.xoops.org/';
 $modversion['module_website_name'] = 'XOOPS';
-$modversion['module_status']       = 'Beta 3';
+$modversion['module_status']       = 'RC1';
 $modversion['min_php']             = '5.5';
 $modversion['min_xoops']           = '2.5.8';
 $modversion['min_admin']           = '1.2';

@@ -29,15 +29,15 @@ require_once $path . '/include/cp_header.php';
 
 global $xoopsModule;
 
-$thisModuleDir = $GLOBALS['xoopsModule']->getVar('dirname');
+$moduleDirName = $GLOBALS['xoopsModule']->getVar('dirname');
 
 // Load language files
-xoops_loadLanguage('admin', $thisModuleDir);
-xoops_loadLanguage('modinfo', $thisModuleDir);
-xoops_loadLanguage('main', $thisModuleDir);
+xoops_loadLanguage('admin', $moduleDirName);
+xoops_loadLanguage('modinfo', $moduleDirName);
+xoops_loadLanguage('main', $moduleDirName);
 
 $pathIcon16      = '../' . $xoopsModule->getInfo('icons16');
 $pathIcon32      = '../' . $xoopsModule->getInfo('icons32');
 $pathModuleAdmin = $xoopsModule->getInfo('dirmoduleadmin');
 
-include_once $GLOBALS['xoops']->path($pathModuleAdmin . '/moduleadmin.php');
+require_once $GLOBALS['xoops']->path($pathModuleAdmin . '/moduleadmin.php');

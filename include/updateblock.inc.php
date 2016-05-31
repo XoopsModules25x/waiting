@@ -69,7 +69,7 @@ function xoops_module_update_waiting($module, $version)
                 if (count($old_vals) == count($def_vals)) {
                     $modversion['blocks'][$fblock->getVar('func_num')]['options'] = $fblockObj->getVar('options');
                     $local_msgs[]                                                 =
-                        "Option's values of the block <b>" . $fblockObj->getVar('name') . '</b> will be kept. (value = <b>' . $fblockObj->getVar('options') . "</b>)";
+                        "Option's values of the block <b>" . $fblockObj->getVar('name') . '</b> will be kept. (value = <b>' . $fblockObj->getVar('options') . '</b>)';
                 } elseif (count($old_vals) < count($def_vals)) {
                     $def_vals                                                        = array_merge($old_vals, $def_vals); //merges prev. values with new - older are preserved
                     $modversion['blocks'][$fblockObj->getVar('func_num')]['options'] = implode('|', $def_vals);
