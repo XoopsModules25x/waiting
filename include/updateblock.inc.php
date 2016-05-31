@@ -26,8 +26,8 @@ if ((!defined('XOOPS_ROOT_PATH')) || !($GLOBALS['xoopsUser'] instanceof XoopsUse
 /**
  *
  * Waiting Block installation update
- * @param XoopsModule  $module  {@see XoopsModule}
- * @param integer $version currently installed module version
+ * @param XoopsModule $module  {@see XoopsModule}
+ * @param integer     $version currently installed module version
  *
  * @return bool success
  */
@@ -90,5 +90,6 @@ function xoops_module_update_waiting($module, $version)
         $msgs                             = array_merge($msgs, $local_msgs);
         $myblocksadmin_parsed_updateblock = true;
     }
+
     return true;  //@todo: for now force success - eventually send 'actual' results
 }

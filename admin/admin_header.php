@@ -40,5 +40,4 @@ $pathIcon16      = '../' . $xoopsModule->getInfo('icons16');
 $pathIcon32      = '../' . $xoopsModule->getInfo('icons32');
 $pathModuleAdmin = $xoopsModule->getInfo('dirmoduleadmin');
 
-
 include_once $GLOBALS['xoops']->path($pathModuleAdmin . '/moduleadmin.php');

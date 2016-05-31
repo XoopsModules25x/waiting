@@ -23,5 +23,6 @@ function b_waiting_yomi()
             'lang_linkname' => _PI_WAITING_WAITINGS
         );
     }
+
     return $block;
 }
