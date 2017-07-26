@@ -16,10 +16,10 @@
  * @package         waiting
  * @author          Ryuji AMANO <info@ryus.co.jp>
  * @author          XOOPS Module Development Team
- * @copyright       {@link http://xoops.org 2001-2016 XOOPS Project}
+ * @copyright       {@link https://xoops.org 2001-2016 XOOPS Project}
  * @license         {@link http://www.fsf.org/copyleft/gpl.html GNU public license}
  * @link            http://ryus.co.jp Ryu's Planning
- * @link            http://xoops.org XOOPS
+ * @link            https://xoops.org XOOPS
  */
 define('_MB_WAITING_NOWAITING_DISPLAY', 'Always displayed');
 define('_MB_WAITING_SQL_CACHE', 'SQL cache');

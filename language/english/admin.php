@@ -16,10 +16,10 @@
  * @package         waiting
  * @author          Ryuji AMANO <info@ryus.co.jp>
  * @author          XOOPS Module Development Team
- * @copyright       {@link http://xoops.org 2001-2016 XOOPS Project}
+ * @copyright       {@link https://xoops.org 2001-2016 XOOPS Project}
  * @license         {@link http://www.fsf.org/copyleft/gpl.html GNU public license}
  * @link            http://ryus.co.jp Ryu's Planning
- * @link            http://xoops.org XOOPS
+ * @link            https://xoops.org XOOPS
  */
 
 define('_AM_WAITING_MODNAME', 'Modules');
@@ -33,4 +33,4 @@ define('_AM_WAITING_PLUGINLIST_DESC',
 define('_AM_WAITING_MISSING', 'Error: The ModuleAdmin class is missing. Please install the ModuleAdmin Class into /Frameworks (see /docs/readme.txt)');
 // Text for Admin footer
 define('_AM_WAITING_FOOTER',
-       "<div class='center smallsmall italic pad5'>Waiting is maintained by the <a class='tooltip' rel='external' href='http://xoops.org/' title='Visit XOOPS Community'>XOOPS Community</a></div>");
+       "<div class='center smallsmall italic pad5'>Waiting is maintained by the <a class='tooltip' rel='external' href='https://xoops.org/' title='Visit XOOPS Community'>XOOPS Community</a></div>");

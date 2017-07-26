@@ -1,4 +1,4 @@
-![alt XOOPS CMS](http://xoops.org/images/logoXoops4GithubRepository.png)
+![alt XOOPS CMS](https://xoops.org/images/logoXoops4GithubRepository.png)
 ## Waiting module for [XOOPS CMS 2.5.8+](https://xoops.org)
 [![Software License](https://img.shields.io/badge/license-GPL-brightgreen.svg?style=flat)](LICENSE) 
 [![Scrutinizer Code Quality](https://img.shields.io/scrutinizer/g/mambax7/waiting.svg?style=flat)](https://scrutinizer-ci.com/g/mambax7/waiting/?branch=master)
@@ -8,14 +8,14 @@
 [![Latest Pre-Resease](https://img.shields.io/github/tag/XoopsModules25x/waiting.svg?style=flat)](https://github.com/XoopsModules25x/waiting/tags/)
 [![Latest Version](https://img.shields.io/github/release/XoopsModules25x/waiting.svg?style=flat)](https://github.com/XoopsModules25x/waiting/releases/)
 
-Waiting for [XOOPS CMS](http://xoops.org) offers you an extensible waiting contents block into your XOOPS. 
+Waiting for [XOOPS CMS](https://xoops.org) offers you an extensible waiting contents block into your XOOPS. 
 
-[![Tutorial Available](http://xoops.org/images/tutorial-available-blue.svg)](https://www.gitbook.com/book/xoops/waiting-tutorial/) Tutorial: see [here](https://www.gitbook.com/book/xoops/waiting-tutorial/). 
+[![Tutorial Available](https://xoops.org/images/tutorial-available-blue.svg)](https://www.gitbook.com/book/xoops/waiting-tutorial/) Tutorial: see [here](https://www.gitbook.com/book/xoops/waiting-tutorial/). 
 To contribute to the Tutorial, [fork it on GitHub](https://github.com/XoopsDocs/waiting-tutorial)
 
-[![Translations on Transifex](http://xoops.org/images/translations-transifex-blue.svg)](https://www.transifex.com/xoops) 
+[![Translations on Transifex](https://xoops.org/images/translations-transifex-blue.svg)](https://www.transifex.com/xoops) 
 
-Please visit us on  [http://xoops.org](http://xoops.org)
+Please visit us on  [https://xoops.org](https://xoops.org)
 
 The upcoming "next generation" version of XOOPS CMS is being crafted on GitHub at: https://github.com/XOOPS
 
