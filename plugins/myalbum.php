@@ -8,7 +8,7 @@ function b_waiting_myalbum_0($mydirnumber = '')
     $xoopsDB = XoopsDatabaseFactory::getDatabaseConnection();
     $block   = array();
 
-    $result = $xoopsDB->query('SELECT COUNT(*) FROM ' . $xoopsDB->prefix("myalbum{$mydirnumber}_photos") . ' WHERE status=0');
+    $result = $xoopsDB->query('SELECT COUNT(*) FROM ' . $xoopsDB->prefix("myalbum{$mydirnumber}_photos") . ' WHERE STATUS=0');
     if ($result) {
         $block['adminlink'] = XOOPS_URL . "/modules/myalbum{$mydirnumber}/admin/admission.php";
         list($block['pendingnum']) = $xoopsDB->fetchRow($result);

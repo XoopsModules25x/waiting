@@ -45,18 +45,19 @@ function b_waiting_waiting_show($options)
         }
     }
 
-    require_once dirname(__DIR__) . '/include/functions.php';
+    require_once __DIR__ . '/../include/functions.php';
 
     // read language files for plugins
     $lang_dir = XOOPS_ROOT_PATH . '/modules/waiting/language';
     if (file_exists("{$lang_dir}/{$userLang}/plugins.php")) {
-        include_once("{$lang_dir}/{$userLang}/plugins.php");
+        require_once "{$lang_dir}/{$userLang}/plugins.php";
     } elseif (file_exists("{$lang_dir}/english/plugins.php")) {
-        include_once("{$lang_dir}/english/plugins.php");
+        require_once "{$lang_dir}/english/plugins.php";
     }
 
-    $plugins_path  = XOOPS_ROOT_PATH . '/modules/waiting/plugins';
-    $xoopsDB       = XoopsDatabaseFactory::getDatabaseConnection();
+    $plugins_path = XOOPS_ROOT_PATH . '/modules/waiting/plugins';
+    $xoopsDB      = XoopsDatabaseFactory::getDatabaseConnection();
+    /** @var XoopsModuleHandler $moduleHandler */
     $moduleHandler = xoops_getHandler('module');
     $block         = array();
 
@@ -69,9 +70,9 @@ function b_waiting_waiting_show($options)
         }
 
         if (!empty($plugin_info['langfile_path'])) {
-            include_once $plugin_info['langfile_path'];
+            require_once $plugin_info['langfile_path'];
         }
-        include_once $plugin_info['plugin_path'];
+        require_once $plugin_info['plugin_path'];
 
         // call the plugin
         if (function_exists(@$plugin_info['func'])) {
@@ -139,13 +140,13 @@ function b_waiting_waiting_edit($options)
 
     $form = _MB_WAITING_NOWAITING_DISPLAY . ":&nbsp;<input type='radio' name='options[0]' value='1'";
     if (1 == $options[0]) {
-        $form .= " checked='checked'";
+        $form .= ' checked';
     }
-    $form .= ' />&nbsp;' . _YES . "<input type='radio' name='options[0]' value='0'";
+    $form .= '>&nbsp;' . _YES . "<input type='radio' name='options[0]' value='0'";
     if (0 == $options[0]) {
-        $form .= " checked='checked'";
+        $form .= ' checked';
     }
-    $form .= ' />&nbsp;' . _NO . "<br>\n";
+    $form .= '>&nbsp;' . _NO . "<br>\n";
     $form .= sprintf(_MINUTES, _MB_WAITING_SQL_CACHE . ":&nbsp;<input type='text' name='options[1]' value='{$sql_cache_min}' size='2'>");
     $form .= "<br>\n<br>\n<a href='{$mod_url}/admin/index.php'><img src='{$mod_url}/assets/images/folder16.gif'>" . _MB_WAITING_LINKTOPLUGINCHECK . '</a>';
 

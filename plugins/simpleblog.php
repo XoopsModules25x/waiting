@@ -1,6 +1,6 @@
 <?php
 
-include_once XOOPS_ROOT_PATH . '/modules/simpleblog/simpleblog.php';
+require_once XOOPS_ROOT_PATH . '/modules/simpleblog/simpleblog.php';
 
 /**
  * @return array

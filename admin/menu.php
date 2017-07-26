@@ -8,6 +8,7 @@
  but WITHOUT ANY WARRANTY; without even the implied warranty of
  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
 */
+
 /**
  * Module: Waiting
  *
@@ -20,14 +21,24 @@
  * @link            https://xoops.org XOOPS
  */
 
-defined('XOOPS_ROOT_PATH') || exit('Restricted access');
+use Xmf\Module\Admin;
+use Xmf\Module\Helper;
+
+defined('XOOPS_ROOT_PATH') || exit('XOOPS root path not defined');
+
+//$path = dirname(dirname(dirname(__DIR__)));
+//require_once $path . '/mainfile.php';
 
 $moduleDirName = basename(dirname(__DIR__));
-$moduleHandler = xoops_getHandler('module');
-$module        = $moduleHandler->getByDirname($moduleDirName);
-$pathIcon32    = $module->getInfo('icons32');
 
-//xoops_loadLanguage('admin', $dirname);
+if (false !== ($moduleHelper = Helper::getHelper($moduleDirName))) {
+} else {
+    $moduleHelper = Helper::getHelper('system');
+}
+$pathIcon32    = Admin::menuIconPath('');
+$pathModIcon32 = $moduleHelper->getModule()->getInfo('modicons32');
+
+xoops_loadLanguage('modinfo', $moduleDirName);
 
 $adminmenu = array(
     array(

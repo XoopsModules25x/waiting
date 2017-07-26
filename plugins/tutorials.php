@@ -10,7 +10,7 @@ function b_waiting_tutorials()
     // tutorials
     $myts = MyTextSanitizer::getInstance();
 
-    $result = $xoopsDB->query('select count(*) from ' . $xoopsDB->prefix('tutorials') . ' WHERE status=0 or status=2 order by date');
+    $result = $xoopsDB->query('SELECT count(*) FROM ' . $xoopsDB->prefix('tutorials') . ' WHERE status=0 OR status=2 ORDER BY date');
     if ($result) {
         $block['adminlink'] = XOOPS_URL . '/modules/tutorials/admin/index.php';
         list($block['pendingnum']) = $xoopsDB->fetchRow($result);

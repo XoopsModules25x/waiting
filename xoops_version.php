@@ -24,8 +24,10 @@
  */
 
 $moduleDirName                    = basename(__DIR__);
-$modversion['name']               = _MI_WAITING_NAME;
 $modversion['version']            = 1.06;
+$modversion['module_status']      = 'RC1';
+$modversion['release_date']       = '2016/05/30';
+$modversion['name']               = _MI_WAITING_NAME;
 $modversion['description']        = _MI_WAITING_DESC;
 $modversion['author']             = 'Ryuji (http://ryus.co.jp/)';
 $modversion['author_website_url'] = 'http://ryus.co.jp';
@@ -34,22 +36,19 @@ $modversion['help']               = 'page=help';
 $modversion['license']            = 'GNU GPL 2.0';
 $modversion['license_url']        = 'www.gnu.org/licenses/gpl-2.0.html';
 $modversion['official']           = 0;
-$modversion['image']              = 'assets/images/logo_module.png';
+$modversion['image']              = 'assets/images/logoModule.png';
 $modversion['dirname']            = $moduleDirName;
-
-$modversion['dirmoduleadmin'] = '/Frameworks/moduleclasses/moduleadmin';
-$modversion['icons16']        = '../../Frameworks/moduleclasses/icons/16';
-$modversion['icons32']        = '../../Frameworks/moduleclasses/icons/32';
-
-//about
-$modversion['release_date']        = '2016/05/30';
+//$modversion['dirmoduleadmin']      = '/Frameworks/moduleclasses/moduleadmin';
+//$modversion['icons16']             = '../../Frameworks/moduleclasses/icons/16';
+//$modversion['icons32']             = '../../Frameworks/moduleclasses/icons/32';
+$modversion['modicons16']          = 'assets/images/icons/16';
+$modversion['modicons32']          = 'assets/images/icons/32';
 $modversion['module_website_url']  = 'www.xoops.org/';
 $modversion['module_website_name'] = 'XOOPS';
-$modversion['module_status']       = 'RC1';
 $modversion['min_php']             = '5.5';
-$modversion['min_xoops']           = '2.5.8';
+$modversion['min_xoops']           = '2.5.9';
 $modversion['min_admin']           = '1.2';
-$modversion['min_db']              = array('mysql' => '5.0.7', 'mysqli' => '5.0.7');
+$modversion['min_db']              = array('mysql' => '5.5');
 
 // Admin things
 $modversion['hasAdmin']    = 1;

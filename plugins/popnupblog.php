@@ -1,6 +1,6 @@
 <?php
 
-include_once XOOPS_ROOT_PATH . '/modules/popnupblog/popnupblog.php';
+require_once XOOPS_ROOT_PATH . '/modules/popnupblog/popnupblog.php';
 
 /**
  * @return array

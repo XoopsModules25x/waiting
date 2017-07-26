@@ -20,7 +20,8 @@
  * @link            https://xoops.org XOOPS
  */
 
-if ((!defined('XOOPS_ROOT_PATH')) || !($GLOBALS['xoopsUser'] instanceof XoopsUser) || !$GLOBALS['xoopsUser']->IsAdmin()) {
+if ((!defined('XOOPS_ROOT_PATH')) || !($GLOBALS['xoopsUser'] instanceof XoopsUser)
+    || !$GLOBALS['xoopsUser']->IsAdmin()) {
     exit('Restricted Access - ' . basename($_SERVER['PHP_SELF']) . PHP_EOL);
 }
 /**
@@ -38,21 +39,21 @@ function xoops_module_update_waiting($module, $version)
     // Keep Block option values when update (by nobunobu)
     $mid = $module->mid();
     if ($mid) {
-        $config_handler      = &xoops_getHandler('config');
-        $waitingModuleConfig = &$config_handler->getConfigsByCat(0, $mid);
+        $configHandler       = xoops_getHandler('config');
+        $waitingModuleConfig = $configHandler->getConfigsByCat(0, $mid);
 
         $count = count($waitingModuleConfig['blocks']);
 
-        $block_handler = xoops_getHandler('block');
-        $criteria      = new CriteriaCompo();
+        $blockHandler = xoops_getHandler('block');
+        $criteria     = new CriteriaCompo();
         $criteria->add(new Criteria('mid', $mid));
         $criteria->add(new Criteria('block_type', 'D'));
         $criteria->add(new Criteria('func_num', $count, '>'));
-        $blockObjs = $block_handler->getAll($criteria);
+        $blockObjs = $blockHandler->getAll($criteria);
 
         foreach ($blockObjs as $blockObj) {
             $local_msgs[] = "Non Defined Block <b>{$fblock['name']}</b> will be deleted";
-            $success      = $block_handler->delete($blockObj); // remove the invalid block
+            $success      = $blockHandler->delete($blockObj); // remove the invalid block
         }
 
         $fieldsArray = array('func_num', 'name', 'options');
@@ -61,25 +62,27 @@ function xoops_module_update_waiting($module, $version)
         //        $criteria->add(new Criteria('func_num', $i));
         $criteria->add(new Criteria('show_func'), addslashes($waitingModuleConfig['blocks'][$i]['show_func']));
         $criteria->add(new Criteria('func_file', addslashes($waitingModuleConfig['blocks'][$i]['file'])));
-        $fblockObjs = $block_handler->getObjects($criteria);
+        $fblockObjs = $blockHandler->getObjects($criteria);
         foreach ($fblockObjs as $fblockObj) {
             if (!empty($fblockObj->options())) {
                 $old_vals = explode('|', $fblockObj->getVar('options'));
                 $def_vals = explode('|', $modversion['blocks'][$fblockObj->getVar('func_num')]['options']);
                 if (count($old_vals) == count($def_vals)) {
                     $modversion['blocks'][$fblock->getVar('func_num')]['options'] = $fblockObj->getVar('options');
-                    $local_msgs[]                                                 =
-                        "Option's values of the block <b>" . $fblockObj->getVar('name') . '</b> will be kept. (value = <b>' . $fblockObj->getVar('options') . '</b>)';
+                    $local_msgs[]                                                 = "Option's values of the block <b>" . $fblockObj->getVar('name') . '</b> will be kept. (value = <b>' . $fblockObj->getVar('options') . '</b>)';
                 } elseif (count($old_vals) < count($def_vals)) {
                     $def_vals                                                        = array_merge($old_vals, $def_vals); //merges prev. values with new - older are preserved
                     $modversion['blocks'][$fblockObj->getVar('func_num')]['options'] = implode('|', $def_vals);
-                    $local_msgs[]                                                    = "Option's values of the block " . '<b>' .
-                                                                                       $fblockObj->getVar('name') . '</b> ' . 'will be kept and new option(s) are added. (value = ' . '<b>' .
-                                                                                       $waitingModuleConfig['blocks'][$fblockObj->getVar('options')] . '</b>)';
+                    $local_msgs[]                                                    = "Option's values of the block "
+                                                                                       . '<b>'
+                                                                                       . $fblockObj->getVar('name')
+                                                                                       . '</b> '
+                                                                                       . 'will be kept and new option(s) are added. (value = '
+                                                                                       . '<b>'
+                                                                                       . $waitingModuleConfig['blocks'][$fblockObj->getVar('options')]
+                                                                                       . '</b>)';
                 } else {
-                    $local_msgs[] = "Option's values of the block " . '<b>' .
-                                    $fblockObj->getVar('name') . '</b> ' . 'will be reset to the default, because of some decrease of options. (value = ' . '<b>' .
-                                    $waitingModuleConfig['blocks'][$fblockObj->getVar('func_num')]['options'] . '</b>)';
+                    $local_msgs[] = "Option's values of the block " . '<b>' . $fblockObj->getVar('name') . '</b> ' . 'will be reset to the default, because of some decrease of options. (value = ' . '<b>' . $waitingModuleConfig['blocks'][$fblockObj->getVar('func_num')]['options'] . '</b>)';
                 }
             }
         }
