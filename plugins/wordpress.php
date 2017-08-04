@@ -9,7 +9,7 @@ function b_waiting_wordpress_0($wp_num = '')
     $block   = array();
 
     // wordpress
-    $result = $xoopsDB->query('SELECT COUNT(*) FROM ' . $xoopsDB->prefix("wp{$wp_num}_comments")  . " WHERE comment_approved='0'");
+    $result = $xoopsDB->query('SELECT COUNT(*) FROM ' . $xoopsDB->prefix("wp{$wp_num}_comments") . " WHERE comment_approved='0'");
     if ($result) {
         $block['adminlink'] = XOOPS_URL . "/modules/wordpress{$wp_num}/wp-admin/moderation.php";
         list($block['pendingnum']) = $xoopsDB->fetchRow($result);

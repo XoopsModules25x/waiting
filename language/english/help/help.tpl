@@ -1,12 +1,7 @@
-<h1 class="head"><{$smarty.const._MI_WAITING_HEADER}>
-    <a class="ui-corner-all tooltip" href="<{$xoops_url}>/modules/<{$smarty.const._MI_WAITING_DIRNAME}>/admin/index.php"
-       title="<{$smarty.const._MI_WAITING_BACK_2_ADMIN}><{$smarty.const._MI_WAITING_NAME}>">
-        <{$smarty.const._MI_WAITING_NAME}>
-        <img src="<{xoAdminIcons home.png}>"
-             alt="<{$smarty.const._MI_WAITING_BACK_2_ADMIN}><{$smarty.const._MI_WAITING}>">
-    </a></h1>
-<!-- -----Help Content ---------- -->
-<h4 class="odd">DESCRIPTION</h4>
+<div id="help-template" class="outer">
+    <{include file=$smarty.const._MI_WAITING_HELP_HEADER}>
+
+    <h4 class="odd">DESCRIPTION</h4> <br>
 
 <p class="even">This module offers you an extensible waiting contents block into your XOOPS installation.<br><br>
     By installing this module, and adding proper plug-ins, you as webmaster can see any approvals waiting for any of

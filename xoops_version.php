@@ -23,24 +23,21 @@
  * @since           2.00
  */
 
-$moduleDirName                    = basename(__DIR__);
-$modversion['version']            = 1.06;
-$modversion['module_status']      = 'RC1';
-$modversion['release_date']       = '2016/05/30';
-$modversion['name']               = _MI_WAITING_NAME;
-$modversion['description']        = _MI_WAITING_DESC;
-$modversion['author']             = 'Ryuji (http://ryus.co.jp/)';
-$modversion['author_website_url'] = 'http://ryus.co.jp';
-$modversion['credits']            = 'Ryus';
-$modversion['help']               = 'page=help';
-$modversion['license']            = 'GNU GPL 2.0';
-$modversion['license_url']        = 'www.gnu.org/licenses/gpl-2.0.html';
-$modversion['official']           = 0;
-$modversion['image']              = 'assets/images/logoModule.png';
-$modversion['dirname']            = $moduleDirName;
-//$modversion['dirmoduleadmin']      = '/Frameworks/moduleclasses/moduleadmin';
-//$modversion['icons16']             = '../../Frameworks/moduleclasses/icons/16';
-//$modversion['icons32']             = '../../Frameworks/moduleclasses/icons/32';
+$moduleDirName                     = basename(__DIR__);
+$modversion['version']             = 1.06;
+$modversion['module_status']       = 'RC1';
+$modversion['release_date']        = '2017/05/30';
+$modversion['name']                = _MI_WAITING_NAME;
+$modversion['description']         = _MI_WAITING_DESC;
+$modversion['author']              = 'Ryuji (http://ryus.co.jp/)';
+$modversion['author_website_url']  = 'http://ryus.co.jp';
+$modversion['credits']             = 'Ryus';
+$modversion['help']                = 'page=help';
+$modversion['license']             = 'GNU GPL 2.0';
+$modversion['license_url']         = 'www.gnu.org/licenses/gpl-2.0.html';
+$modversion['official']            = 0;
+$modversion['image']               = 'assets/images/logoModule.png';
+$modversion['dirname']             = $moduleDirName;
 $modversion['modicons16']          = 'assets/images/icons/16';
 $modversion['modicons32']          = 'assets/images/icons/32';
 $modversion['module_website_url']  = 'www.xoops.org/';
@@ -55,6 +52,14 @@ $modversion['hasAdmin']    = 1;
 $modversion['system_menu'] = 1;
 $modversion['adminmenu']   = 'admin/menu.php';
 $modversion['adminindex']  = 'admin/index.php';
+
+// ------------------- Help files ------------------- //
+$modversion['helpsection'] = array(
+    ['name' => _MI_WAITING_OVERVIEW, 'link' => 'page=help'],
+    ['name' => _MI_WAITING_DISCLAIMER, 'link' => 'page=disclaimer'],
+    ['name' => _MI_WAITING_LICENSE, 'link' => 'page=license'],
+    ['name' => _MI_WAITING_SUPPORT, 'link' => 'page=support'],
+);
 
 // Templates
 

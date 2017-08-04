@@ -36,3 +36,17 @@ define('_MI_WAITING_MENU_PLUGINS', 'Plugins');
 define('_MI_WAITING_HEADER', 'Help:');
 define('_MI_WAITING_DIRNAME', basename(dirname(dirname(__DIR__))));
 define('_MI_WAITING_BACK_2_ADMIN', 'Back to Administration of ');
+
+//1.06
+//Help
+define('_MI_WAITING_DIRNAME', basename(dirname(dirname(__DIR__))));
+define('_MI_WAITING_HELP_HEADER', __DIR__.'/help/helpheader.tpl');
+define('_MI_WAITING_BACK_2_ADMIN', 'Back to Administration of ');
+define('_MI_WAITING_OVERVIEW', 'Overview');
+
+//define('_MI_WAITING_HELP_DIR', __DIR__);
+
+//help multi-page
+define('_MI_WAITING_DISCLAIMER', 'Disclaimer');
+define('_MI_WAITING_LICENSE', 'License');
+define('_MI_WAITING_SUPPORT', 'Support');
