@@ -6,7 +6,7 @@
 function b_waiting_wordpress_0($wp_num = '')
 {
     $xoopsDB = XoopsDatabaseFactory::getDatabaseConnection();
-    $block   = array();
+    $block   = [];
 
     // wordpress
     $result = $xoopsDB->query('SELECT COUNT(*) FROM ' . $xoopsDB->prefix("wp{$wp_num}_comments") . " WHERE comment_approved='0'");

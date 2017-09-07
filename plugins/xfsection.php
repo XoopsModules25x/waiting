@@ -9,10 +9,10 @@
 function b_waiting_xfsection()
 {
     $xoopsDB = XoopsDatabaseFactory::getDatabaseConnection();
-    $ret     = array();
+    $ret     = [];
 
     // xf-section articles - waiting
-    $block  = array();
+    $block  = [];
     $result = $xoopsDB->query('SELECT COUNT(*) FROM ' . $xoopsDB->prefix('xfs_article') . ' WHERE published=0');
     if ($result) {
         $block['adminlink'] = XOOPS_URL . '/modules/xfsection/admin/allarticles.php?action=submitted';
@@ -22,7 +22,7 @@ function b_waiting_xfsection()
     $ret[] = $block;
 
     // xf-section articles - attach broken
-    $block  = array();
+    $block  = [];
     $result = $xoopsDB->query('SELECT COUNT(*) FROM ' . $xoopsDB->prefix('xfs_broken') . '');
     if ($result) {
         $block['adminlink'] = XOOPS_URL . '/modules/xfsection/admin/brokendown.php?op=listBrokenDownloads';

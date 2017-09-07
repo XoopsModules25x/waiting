@@ -6,7 +6,7 @@
 function b_waiting_agendax()
 {
     $xoopsDB = XoopsDatabaseFactory::getDatabaseConnection();
-    $block   = array();
+    $block   = [];
 
     // agenda-x events
     $result = $xoopsDB->query('SELECT COUNT(*) FROM ' . $xoopsDB->prefix('agendax_events') . ' WHERE approved=0');

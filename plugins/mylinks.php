@@ -5,10 +5,10 @@
 function b_waiting_mylinks()
 {
     $xoopsDB = XoopsDatabaseFactory::getDatabaseConnection();
-    $ret     = array();
+    $ret     = [];
 
     // mylinks links
-    $block  = array();
+    $block  = [];
     $result = $xoopsDB->query('SELECT COUNT(*) FROM ' . $xoopsDB->prefix('mylinks_links') . ' WHERE status=0');
     if ($result) {
         $block['adminlink'] = XOOPS_URL . '/modules/mylinks/admin/index.php?op=listNewLinks';
@@ -18,7 +18,7 @@ function b_waiting_mylinks()
     $ret[] = $block;
 
     // mylinks broken
-    $block  = array();
+    $block  = [];
     $result = $xoopsDB->query('SELECT COUNT(*) FROM ' . $xoopsDB->prefix('mylinks_broken'));
     if ($result) {
         $block['adminlink'] = XOOPS_URL . '/modules/mylinks/admin/index.php?op=listBrokenLinks';
@@ -28,7 +28,7 @@ function b_waiting_mylinks()
     $ret[] = $block;
 
     // mylinks modreq
-    $block  = array();
+    $block  = [];
     $result = $xoopsDB->query('SELECT COUNT(*) FROM ' . $xoopsDB->prefix('mylinks_mod'));
     if ($result) {
         $block['adminlink'] = XOOPS_URL . '/modules/mylinks/admin/index.php?op=listModReq';

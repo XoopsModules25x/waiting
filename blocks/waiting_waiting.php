@@ -39,7 +39,7 @@ function b_waiting_waiting_show($options)
     if (file_exists($sql_cache_file)) {
         $sql_cache_mtime = filemtime($sql_cache_file);
         if (time() < $sql_cache_mtime + $sql_cache_min * 60) {
-            return array();
+            return [];
         } else {
             unlink($sql_cache_file);
         }
@@ -59,7 +59,7 @@ function b_waiting_waiting_show($options)
     $xoopsDB      = XoopsDatabaseFactory::getDatabaseConnection();
     /** @var XoopsModuleHandler $moduleHandler */
     $moduleHandler = xoops_getHandler('module');
-    $block         = array();
+    $block         = [];
 
     // get module's list installed
     $mod_lists = $moduleHandler->getList(new Criteria(1, 1), true);

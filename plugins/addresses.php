@@ -6,10 +6,10 @@
 function b_waiting_addresses()
 {
     $xoopsDB = XoopsDatabaseFactory::getDatabaseConnection();
-    $ret     = array();
+    $ret     = [];
 
     // addresses links
-    $block  = array();
+    $block  = [];
     $result = $xoopsDB->query('SELECT COUNT(*) FROM ' . $xoopsDB->prefix('addresses_links') . ' WHERE status=0');
     if ($result) {
         $block['adminlink'] = XOOPS_URL . '/modules/addresses/admin/index.php?op=listNewLinks';
@@ -19,7 +19,7 @@ function b_waiting_addresses()
     $ret[] = $block;
 
     // addresses broken
-    $block  = array();
+    $block  = [];
     $result = $xoopsDB->query('SELECT COUNT(*) FROM ' . $xoopsDB->prefix('addresses_broken'));
     if ($result) {
         $block['adminlink'] = XOOPS_URL . '/modules/addresses/admin/index.php?op=listBrokenLinks';
@@ -29,7 +29,7 @@ function b_waiting_addresses()
     $ret[] = $block;
 
     // addresses modreq
-    $block  = array();
+    $block  = [];
     $result = $xoopsDB->query('SELECT COUNT(*) FROM ' . $xoopsDB->prefix('addresses_mod'));
     if ($result) {
         $block['adminlink'] = XOOPS_URL . '/modules/addresses/admin/index.php?op=listModReq';

@@ -33,7 +33,7 @@ $adminObject->displayNavigation(basename(__FILE__));
 $plugins_path = XOOPS_ROOT_PATH . '/modules/waiting/plugins';
 /** @var XoopsModuleHandler $moduleHandler */
 $moduleHandler = xoops_getHandler('module');
-$block         = array();
+$block         = [];
 
 $mod_lists = $moduleHandler->getList(new Criteria(1, 1), true);
 $mod_objs  = $moduleHandler->getObjects(); // get all module objects

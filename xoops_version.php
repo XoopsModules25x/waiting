@@ -45,7 +45,7 @@ $modversion['module_website_name'] = 'XOOPS';
 $modversion['min_php']             = '5.5';
 $modversion['min_xoops']           = '2.5.9';
 $modversion['min_admin']           = '1.2';
-$modversion['min_db']              = array('mysql' => '5.5');
+$modversion['min_db']              = ['mysql' => '5.5'];
 
 // Admin things
 $modversion['hasAdmin']    = 1;
@@ -54,12 +54,12 @@ $modversion['adminmenu']   = 'admin/menu.php';
 $modversion['adminindex']  = 'admin/index.php';
 
 // ------------------- Help files ------------------- //
-$modversion['helpsection'] = array(
+$modversion['helpsection'] = [
     ['name' => _MI_WAITING_OVERVIEW, 'link' => 'page=help'],
     ['name' => _MI_WAITING_DISCLAIMER, 'link' => 'page=disclaimer'],
     ['name' => _MI_WAITING_LICENSE, 'link' => 'page=license'],
     ['name' => _MI_WAITING_SUPPORT, 'link' => 'page=support'],
-);
+];
 
 // Templates
 

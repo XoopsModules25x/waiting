@@ -15,10 +15,10 @@
 function b_waiting_publisher()
 {
     $xoopsDB = XoopsDatabaseFactory::getDatabaseConnection();
-    $ret     = array();
+    $ret     = [];
 
     // publisher submitted
-    $block  = array();
+    $block  = [];
     $result = $xoopsDB->query('SELECT COUNT(*) FROM ' . $xoopsDB->prefix('publisher_items') . ' WHERE status=1');
     if ($result) {
         $block['adminlink'] = XOOPS_URL . '/modules/publisher/admin/item.php';

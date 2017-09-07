@@ -5,7 +5,7 @@
 function b_waiting_tutorials()
 {
     $xoopsDB = XoopsDatabaseFactory::getDatabaseConnection();
-    $block   = array();
+    $block   = [];
 
     // tutorials
     $myts = MyTextSanitizer::getInstance();

@@ -17,10 +17,10 @@
 function b_waiting_wfdownloads()
 {
     $xoopsDB = XoopsDatabaseFactory::getDatabaseConnection();
-    $ret     = array();
+    $ret     = [];
 
     // wfdownloads pending
-    $block  = array();
+    $block  = [];
     $result = $xoopsDB->query('SELECT COUNT(*) FROM ' . $xoopsDB->prefix('wfdownloads_downloads') . ' WHERE status=0');
     if ($result) {
         $block['adminlink'] = XOOPS_URL . '/modules/wfdownloads/admin/newdownloads.php';
@@ -30,7 +30,7 @@ function b_waiting_wfdownloads()
     $ret[] = $block;
 
     // wfdownloads broken
-    $block  = array();
+    $block  = [];
     $result = $xoopsDB->query('SELECT COUNT(*) FROM ' . $xoopsDB->prefix('wfdownloads_broken'));
     if ($result) {
         $block['adminlink'] = XOOPS_URL . '/modules/wfdownloads/admin/brokendown.php';
@@ -40,7 +40,7 @@ function b_waiting_wfdownloads()
     $ret[] = $block;
 
     // wfdownloads modreq
-    $block  = array();
+    $block  = [];
     $result = $xoopsDB->query('SELECT COUNT(*) FROM ' . $xoopsDB->prefix('wfdownloads_mod'));
     if ($result) {
         $block['adminlink'] = XOOPS_URL . '/modules/wfdownloads/admin/modifications.php';
@@ -50,7 +50,7 @@ function b_waiting_wfdownloads()
     $ret[] = $block;
 
     // wfdownloads reviews
-    $block  = array();
+    $block  = [];
     $result = $xoopsDB->query('SELECT COUNT(*) FROM ' . $xoopsDB->prefix('wfdownloads_reviews') . ' WHERE submit=0');
     if ($result) {
         $block['adminlink'] = XOOPS_URL . '/modules/wfdownloads/admin/index.php?op=reviews';

@@ -5,7 +5,7 @@
 function b_waiting_news()
 {
     $xoopsDB = XoopsDatabaseFactory::getDatabaseConnection();
-    $block   = array();
+    $block   = [];
 
     // news
     $result = $xoopsDB->query('SELECT COUNT(*) FROM ' . $xoopsDB->prefix('stories') . ' WHERE published=0');

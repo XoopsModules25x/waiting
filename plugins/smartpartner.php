@@ -8,7 +8,7 @@
 function b_waiting_smartpartner()
 {
     $xoopsDB = XoopsDatabaseFactory::getDatabaseConnection();
-    $block   = array();
+    $block   = [];
 
     // smartpartner submitted
     $result = $xoopsDB->query('SELECT COUNT(*) FROM ' . $xoopsDB->prefix('smartpartner_partner') . ' WHERE status=1');

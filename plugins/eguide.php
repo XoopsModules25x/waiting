@@ -5,7 +5,7 @@
 function b_waiting_eguide()
 {
     $xoopsDB = XoopsDatabaseFactory::getDatabaseConnection();
-    $block   = array();
+    $block   = [];
 
     // eguide
     $result = $xoopsDB->query('SELECT COUNT(*) FROM ' . $xoopsDB->prefix('eguide') . ' WHERE status=1');

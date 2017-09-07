@@ -6,10 +6,10 @@
 function b_waiting_xdirectory()
 {
     $xoopsDB = XoopsDatabaseFactory::getDatabaseConnection();
-    $ret     = array();
+    $ret     = [];
 
     // xdirectory links
-    $block  = array();
+    $block  = [];
     $result = $xoopsDB->query('SELECT COUNT(*) FROM ' . $xoopsDB->prefix('xdir_links') . ' WHERE status=0');
     if ($result) {
         $block['adminlink'] = XOOPS_URL . '/modules/xdirectory/admin/index.php?op=listNewLinks';
@@ -19,7 +19,7 @@ function b_waiting_xdirectory()
     $ret[] = $block;
 
     // xdirectory broken
-    $block  = array();
+    $block  = [];
     $result = $xoopsDB->query('SELECT COUNT(*) FROM ' . $xoopsDB->prefix('xdir_broken'));
     if ($result) {
         $block['adminlink'] = XOOPS_URL . '/modules/xdirectory/admin/index.php?op=listBrokenLinks';
@@ -29,7 +29,7 @@ function b_waiting_xdirectory()
     $ret[] = $block;
 
     // xdirectory modreq
-    $block  = array();
+    $block  = [];
     $result = $xoopsDB->query('SELECT COUNT(*) FROM ' . $xoopsDB->prefix('xdir_mod'));
     if ($result) {
         $block['adminlink'] = XOOPS_URL . '/modules/xdirectory/admin/index.php?op=listModReq';

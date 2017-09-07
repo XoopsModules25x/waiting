@@ -12,7 +12,7 @@
 function b_waiting_extgallery()
 {
     $xoopsDB = XoopsDatabaseFactory::getDatabaseConnection();
-    $block   = array();
+    $block   = [];
 
     // extcal events
     $result = $xoopsDB->query('SELECT COUNT(*) FROM ' . $xoopsDB->prefix('extgallery_publicphoto') . ' WHERE photo_approved=0');

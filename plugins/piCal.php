@@ -5,7 +5,7 @@
 function b_waiting_piCal()
 {
     $xoopsDB = XoopsDatabaseFactory::getDatabaseConnection();
-    $block   = array();
+    $block   = [];
 
     //piCal
     $result = $xoopsDB->query('SELECT COUNT(*) FROM ' . $xoopsDB->prefix('pical_event') . ' WHERE admission<1 AND (rrule_pid=0 OR rrule_pid=id)');

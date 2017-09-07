@@ -9,10 +9,10 @@
 function b_waiting_wfsection()
 {
     $xoopsDB = XoopsDatabaseFactory::getDatabaseConnection();
-    $ret     = array();
+    $ret     = [];
 
     // wf-section articles - new
-    $block  = array();
+    $block  = [];
     $result = $xoopsDB->query('SELECT COUNT(*) FROM ' . $xoopsDB->prefix('wfs_article') . ' WHERE published=0');
     if ($result) {
         $block['adminlink'] = XOOPS_URL . '/modules/wfsection/admin/allarticles.php?action=submitted';
@@ -22,7 +22,7 @@ function b_waiting_wfsection()
     $ret[] = $block;
 
     // wf-section articles - modified
-    $block  = array();
+    $block  = [];
     $result = $xoopsDB->query('SELECT COUNT(*) FROM ' . $xoopsDB->prefix('wfs_article_mod') . '');
     if ($result) {
         $block['adminlink'] = XOOPS_URL . '/modules/wfsection/admin/modified.php';

@@ -12,9 +12,9 @@
 function b_waiting_xoopstube()
 {
     $xoopsDB = XoopsDatabaseFactory::getDatabaseConnection();
-    $ret     = array();
+    $ret     = [];
     // xoopstube waiting
-    $block  = array();
+    $block  = [];
     $result = $xoopsDB->query('SELECT COUNT(*) FROM ' . $xoopsDB->prefix('xoopstube_videos') . ' WHERE status=0');
     if ($result) {
         $block['adminlink'] = XOOPS_URL . '/modules/xoopstube/admin/newvideos.php';
@@ -23,7 +23,7 @@ function b_waiting_xoopstube()
     }
     $ret[] = $block;
     // xoopstube broken
-    $block  = array();
+    $block  = [];
     $result = $xoopsDB->query('SELECT COUNT(*) FROM ' . $xoopsDB->prefix('xoopstube_broken'));
     if ($result) {
         $block['adminlink'] = XOOPS_URL . '/modules/xoopstube/admin/brokenvideo.php';
@@ -32,7 +32,7 @@ function b_waiting_xoopstube()
     }
     $ret[] = $block;
     // xoopstube modreq
-    $block  = array();
+    $block  = [];
     $result = $xoopsDB->query('SELECT COUNT(*) FROM ' . $xoopsDB->prefix('xoopstube_mod'));
     if ($result) {
         $block['adminlink'] = XOOPS_URL . '/modules/xoopstube/admin/modifications.php';

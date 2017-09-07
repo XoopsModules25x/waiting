@@ -5,7 +5,7 @@
 function b_waiting_myAds()
 {
     $xoopsDB = XoopsDatabaseFactory::getDatabaseConnection();
-    $block   = array();
+    $block   = [];
 
     $result = $xoopsDB->query('SELECT COUNT(*) FROM ' . $xoopsDB->prefix('ann_annonces') . " WHERE valid='No'");
     if ($result) {

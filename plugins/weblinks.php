@@ -5,10 +5,10 @@
 function b_waiting_weblinks()
 {
     $xoopsDB = XoopsDatabaseFactory::getDatabaseConnection();
-    $ret     = array();
+    $ret     = [];
 
     // weblinks links
-    $block  = array();
+    $block  = [];
     $result = $xoopsDB->query('SELECT COUNT(*) FROM ' . $xoopsDB->prefix('weblinks_modify') . ' WHERE mode=0');
     if ($result) {
         //      $block['adminlink'] = XOOPS_URL."/modules/weblinks/admin/index.php?op=listNewLinks";
@@ -20,7 +20,7 @@ function b_waiting_weblinks()
     $ret[] = $block;
 
     // weblinks broken
-    $block  = array();
+    $block  = [];
     $result = $xoopsDB->query('SELECT COUNT(*) FROM ' . $xoopsDB->prefix('weblinks_broken'));
     if ($result) {
         $block['adminlink'] = XOOPS_URL . '/modules/weblinks/admin/index.php?op=listBrokenLinks';
@@ -30,7 +30,7 @@ function b_waiting_weblinks()
     $ret[] = $block;
 
     // weblinks modreq
-    $block  = array();
+    $block  = [];
     $result = $xoopsDB->query('SELECT COUNT(*) FROM ' . $xoopsDB->prefix('weblinks_modify') . ' WHERE mode=1');
     if ($result) {
         //      $block['adminlink'] = XOOPS_URL."/modules/weblinks/admin/index.php?op=listModReq";

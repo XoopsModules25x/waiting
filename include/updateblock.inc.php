@@ -56,7 +56,7 @@ function xoops_module_update_waiting($module, $version)
             $success      = $blockHandler->delete($blockObj); // remove the invalid block
         }
 
-        $fieldsArray = array('func_num', 'name', 'options');
+        $fieldsArray = ['func_num', 'name', 'options'];
         $criteria    = new CriteriaCompo();
         $criteria->add(new Criteria('mid', $mid));
         //        $criteria->add(new Criteria('func_num', $i));

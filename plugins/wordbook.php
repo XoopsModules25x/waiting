@@ -6,10 +6,10 @@
 function b_waiting_wordbook()
 {
     $xoopsDB = XoopsDatabaseFactory::getDatabaseConnection();
-    $ret     = array();
+    $ret     = [];
 
     // Waiting
-    $block  = array();
+    $block  = [];
     $result = $xoopsDB->query('SELECT COUNT(*) FROM ' . $xoopsDB->prefix('wbentries') . ' WHERE submit=1 AND categoryID>0');
     if ($result) {
         $block['adminlink'] = XOOPS_URL . '/modules/wordbook/admin/index.php#esp.';

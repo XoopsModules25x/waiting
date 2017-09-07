@@ -5,7 +5,7 @@
 function b_waiting_AMS()
 {
     $xoopsDB = XoopsDatabaseFactory::getDatabaseConnection();
-    $block   = array();
+    $block   = [];
 
     // AMS articles
     $result = $xoopsDB->query('SELECT COUNT(*) FROM ' . $xoopsDB->prefix('ams_article') . ' WHERE published=0');

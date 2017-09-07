@@ -5,10 +5,10 @@
 function b_waiting_mydownloads()
 {
     $xoopsDB = XoopsDatabaseFactory::getDatabaseConnection();
-    $ret     = array();
+    $ret     = [];
 
     // mydownloads links
-    $block  = array();
+    $block  = [];
     $result = $xoopsDB->query('SELECT COUNT(*) FROM ' . $xoopsDB->prefix('mydownloads_downloads') . ' WHERE status=0');
     if ($result) {
         $block['adminlink'] = XOOPS_URL . '/modules/mydownloads/admin/index.php?op=listNewDownloads';
@@ -18,7 +18,7 @@ function b_waiting_mydownloads()
     $ret[] = $block;
 
     // mydownloads broken
-    $block  = array();
+    $block  = [];
     $result = $xoopsDB->query('SELECT COUNT(*) FROM ' . $xoopsDB->prefix('mydownloads_broken'));
     if ($result) {
         $block['adminlink'] = XOOPS_URL . '/modules/mydownloads/admin/index.php?op=listBrokenDownloads';
@@ -28,7 +28,7 @@ function b_waiting_mydownloads()
     $ret[] = $block;
 
     // mydownloads modreq
-    $block  = array();
+    $block  = [];
     $result = $xoopsDB->query('SELECT COUNT(*) FROM ' . $xoopsDB->prefix('mydownloads_mod'));
     if ($result) {
         $block['adminlink'] = XOOPS_URL . '/modules/mydownloads/admin/index.php?op=listModReq';

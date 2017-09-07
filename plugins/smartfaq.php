@@ -8,10 +8,10 @@
 function b_waiting_smartfaq()
 {
     $xoopsDB = XoopsDatabaseFactory::getDatabaseConnection();
-    $ret     = array();
+    $ret     = [];
 
     // smartfaq submitted
-    $block  = array();
+    $block  = [];
     $result = $xoopsDB->query('SELECT COUNT(*) FROM ' . $xoopsDB->prefix('smartfaq_faq') . ' WHERE status=4');
     if ($result) {
         $block['adminlink'] = XOOPS_URL . '/modules/smartfaq/admin/index.php?statussel=4';
@@ -21,7 +21,7 @@ function b_waiting_smartfaq()
     $ret[] = $block;
 
     // smartfaq asked
-    $block  = array();
+    $block  = [];
     $result = $xoopsDB->query('SELECT COUNT(*) FROM ' . $xoopsDB->prefix('smartfaq_faq') . ' WHERE status=1');
     if ($result) {
         $block['adminlink'] = XOOPS_URL . '/modules/smartfaq/admin/index.php?statussel=1';
@@ -31,7 +31,7 @@ function b_waiting_smartfaq()
     $ret[] = $block;
 
     // smartfaq new answer
-    $block  = array();
+    $block  = [];
     $result = $xoopsDB->query('SELECT COUNT(*) FROM ' . $xoopsDB->prefix('smartfaq_faq') . ' WHERE status=6');
     if ($result) {
         $block['adminlink'] = XOOPS_URL . '/modules/smartfaq/admin/index.php?statussel=6';
@@ -41,7 +41,7 @@ function b_waiting_smartfaq()
     $ret[] = $block;
 
     // smartfaq answered
-    $block  = array();
+    $block  = [];
     $result = $xoopsDB->query('SELECT COUNT(*) FROM ' . $xoopsDB->prefix('smartfaq_faq') . ' WHERE status=3');
     if ($result) {
         $block['adminlink'] = XOOPS_URL . '/modules/smartfaq/admin/index.php?statussel=3';

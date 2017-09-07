@@ -5,7 +5,7 @@
 function b_waiting_extcal()
 {
     $xoopsDB = XoopsDatabaseFactory::getDatabaseConnection();
-    $block   = array();
+    $block   = [];
 
     // extcal events
     $result = $xoopsDB->query('SELECT COUNT(*) FROM ' . $xoopsDB->prefix('extcal_event') . ' WHERE event_approved=0');
