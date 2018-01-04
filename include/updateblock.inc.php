@@ -20,8 +20,7 @@
  * @link            https://xoops.org XOOPS
  */
 
-if ((!defined('XOOPS_ROOT_PATH')) || !($GLOBALS['xoopsUser'] instanceof XoopsUser)
-    || !$GLOBALS['xoopsUser']->IsAdmin()) {
+if ((!defined('XOOPS_ROOT_PATH')) || !($GLOBALS['xoopsUser'] instanceof XoopsUser) || !$GLOBALS['xoopsUser']->IsAdmin()) {
     exit('Restricted Access - ' . basename($_SERVER['PHP_SELF']) . PHP_EOL);
 }
 /**

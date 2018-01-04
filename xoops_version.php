@@ -23,6 +23,8 @@
  * @since           2.00
  */
 
+require_once __DIR__ . '/preloads/autoloader.php';
+
 $moduleDirName                     = basename(__DIR__);
 $modversion['version']             = 1.06;
 $modversion['module_status']       = 'RC1';

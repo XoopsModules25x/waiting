@@ -8,7 +8,7 @@ function b_waiting_tutorials()
     $block   = [];
 
     // tutorials
-    $myts = MyTextSanitizer::getInstance();
+    $myts = \MyTextSanitizer::getInstance();
 
     $result = $xoopsDB->query('SELECT count(*) FROM ' . $xoopsDB->prefix('tutorials') . ' WHERE status=0 OR status=2 ORDER BY date');
     if ($result) {
