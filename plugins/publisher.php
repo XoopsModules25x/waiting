@@ -14,7 +14,7 @@
  */
 function b_waiting_publisher()
 {
-    $xoopsDB = XoopsDatabaseFactory::getDatabaseConnection();
+    $xoopsDB = \XoopsDatabaseFactory::getDatabaseConnection();
     $ret     = [];
 
     // publisher submitted

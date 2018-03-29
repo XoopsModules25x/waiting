@@ -4,7 +4,7 @@
  */
 function b_waiting_newbb()
 {
-    $xoopsDB = XoopsDatabaseFactory::getDatabaseConnection();
+    $xoopsDB = \XoopsDatabaseFactory::getDatabaseConnection();
     $block   = [];
 
     // judge the version of newbb/

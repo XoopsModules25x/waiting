@@ -16,7 +16,7 @@
  */
 function b_waiting_wfdownloads()
 {
-    $xoopsDB = XoopsDatabaseFactory::getDatabaseConnection();
+    $xoopsDB = \XoopsDatabaseFactory::getDatabaseConnection();
     $ret     = [];
 
     // wfdownloads pending

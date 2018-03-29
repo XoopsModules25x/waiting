@@ -6,7 +6,7 @@ function b_waiting_catads()
 {
     $block    = [];
     $ads_hnd  = xoops_getModuleHandler('ads', 'catads');
-    $criteria = new Criteria('waiting', '1', '=');
+    $criteria = new \Criteria('waiting', '1', '=');
     $nbads    = $ads_hnd->getCount($criteria);
     if ($nbads > 0) {
         $block['adminlink']     = XOOPS_URL . '/modules/catads/admin/index.php?action=waiting';

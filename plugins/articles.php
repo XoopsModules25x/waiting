@@ -4,7 +4,7 @@
  */
 function b_waiting_articles()
 {
-    $xoopsDB = XoopsDatabaseFactory::getDatabaseConnection();
+    $xoopsDB = \XoopsDatabaseFactory::getDatabaseConnection();
     $block   = [];
 
     $result = $xoopsDB->query('SELECT COUNT(*) FROM ' . $xoopsDB->prefix('articles_main') . ' WHERE art_validated = 0');

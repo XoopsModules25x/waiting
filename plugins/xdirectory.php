@@ -5,7 +5,7 @@
  */
 function b_waiting_xdirectory()
 {
-    $xoopsDB = XoopsDatabaseFactory::getDatabaseConnection();
+    $xoopsDB = \XoopsDatabaseFactory::getDatabaseConnection();
     $ret     = [];
 
     // xdirectory links

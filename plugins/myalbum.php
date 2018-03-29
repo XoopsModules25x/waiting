@@ -5,7 +5,7 @@
  */
 function b_waiting_myalbum_0($mydirnumber = '')
 {
-    $xoopsDB = XoopsDatabaseFactory::getDatabaseConnection();
+    $xoopsDB = \XoopsDatabaseFactory::getDatabaseConnection();
     $block   = [];
 
     $result = $xoopsDB->query('SELECT COUNT(*) FROM ' . $xoopsDB->prefix("myalbum{$mydirnumber}_photos") . ' WHERE STATUS=0');

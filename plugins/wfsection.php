@@ -8,7 +8,7 @@
  */
 function b_waiting_wfsection()
 {
-    $xoopsDB = XoopsDatabaseFactory::getDatabaseConnection();
+    $xoopsDB = \XoopsDatabaseFactory::getDatabaseConnection();
     $ret     = [];
 
     // wf-section articles - new

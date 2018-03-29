@@ -8,7 +8,7 @@
  */
 function b_waiting_xfsection()
 {
-    $xoopsDB = XoopsDatabaseFactory::getDatabaseConnection();
+    $xoopsDB = \XoopsDatabaseFactory::getDatabaseConnection();
     $ret     = [];
 
     // xf-section articles - waiting

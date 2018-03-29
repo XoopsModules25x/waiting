@@ -4,7 +4,7 @@
  */
 function b_waiting_extcal()
 {
-    $xoopsDB = XoopsDatabaseFactory::getDatabaseConnection();
+    $xoopsDB = \XoopsDatabaseFactory::getDatabaseConnection();
     $block   = [];
 
     // extcal events

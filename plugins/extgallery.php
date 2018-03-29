@@ -11,7 +11,7 @@
  */
 function b_waiting_extgallery()
 {
-    $xoopsDB = XoopsDatabaseFactory::getDatabaseConnection();
+    $xoopsDB = \XoopsDatabaseFactory::getDatabaseConnection();
     $block   = [];
 
     // extcal events

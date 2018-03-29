@@ -7,7 +7,7 @@
  */
 function b_waiting_smartfaq()
 {
-    $xoopsDB = XoopsDatabaseFactory::getDatabaseConnection();
+    $xoopsDB = \XoopsDatabaseFactory::getDatabaseConnection();
     $ret     = [];
 
     // smartfaq submitted

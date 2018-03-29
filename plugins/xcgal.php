@@ -4,7 +4,7 @@
  */
 function b_waiting_xcgal()
 {
-    $xoopsDB = XoopsDatabaseFactory::getDatabaseConnection();
+    $xoopsDB = \XoopsDatabaseFactory::getDatabaseConnection();
     $block   = [];
 
     $result = $xoopsDB->query('SELECT count(*) FROM ' . $xoopsDB->prefix('xcgal_pictures') . " WHERE approved = 'NO'");

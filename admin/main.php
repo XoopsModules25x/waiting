@@ -35,7 +35,7 @@ $plugins_path = XOOPS_ROOT_PATH . '/modules/waiting/plugins';
 $moduleHandler = xoops_getHandler('module');
 $block         = [];
 
-$mod_lists = $moduleHandler->getList(new Criteria(1, 1), true);
+$mod_lists = $moduleHandler->getList(new \Criteria(1, 1), true);
 $mod_objs  = $moduleHandler->getObjects(); // get all module objects
 
 echo '<h4>'
@@ -65,10 +65,10 @@ foreach ($mod_objs as $this_obj) {
     echo "  <tr class='{$class}'>"
          . "    <td class='txtcenter width10'><img src='{$pathIcon16}/{$icon}'>"
          . '    <td>'
-         . htmlspecialchars($this_obj->getVar('name'))
+         . htmlspecialchars($this_obj->getVar('name'), ENT_QUOTES | ENT_HTML5)
          . "</td>\n"
          . "    <td class='txtcenter'>"
-         . htmlspecialchars($this_obj->dirname())
+         . htmlspecialchars($this_obj->dirname(), ENT_QUOTES | ENT_HTML5)
          . "</td>\n"
          . "    <td class='txtcenter'>{$plugin_type}</td>\n"
          . "  </tr>\n";

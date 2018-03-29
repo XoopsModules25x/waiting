@@ -5,7 +5,7 @@
  */
 function b_waiting_wordpress_0($wp_num = '')
 {
-    $xoopsDB = XoopsDatabaseFactory::getDatabaseConnection();
+    $xoopsDB = \XoopsDatabaseFactory::getDatabaseConnection();
     $block   = [];
 
     // wordpress

@@ -20,7 +20,7 @@
  * @link            https://xoops.org XOOPS
  */
 
-if ((!defined('XOOPS_ROOT_PATH')) || !($GLOBALS['xoopsUser'] instanceof XoopsUser) || !$GLOBALS['xoopsUser']->IsAdmin()) {
+if ((!defined('XOOPS_ROOT_PATH')) || !($GLOBALS['xoopsUser'] instanceof \XoopsUser) || !$GLOBALS['xoopsUser']->IsAdmin()) {
     exit('Restricted Access - ' . basename($_SERVER['PHP_SELF']) . PHP_EOL);
 }
 /**
@@ -44,10 +44,10 @@ function xoops_module_update_waiting($module, $version)
         $count = count($waitingModuleConfig['blocks']);
 
         $blockHandler = xoops_getHandler('block');
-        $criteria     = new CriteriaCompo();
-        $criteria->add(new Criteria('mid', $mid));
-        $criteria->add(new Criteria('block_type', 'D'));
-        $criteria->add(new Criteria('func_num', $count, '>'));
+        $criteria     = new \CriteriaCompo();
+        $criteria->add(new \Criteria('mid', $mid));
+        $criteria->add(new \Criteria('block_type', 'D'));
+        $criteria->add(new \Criteria('func_num', $count, '>'));
         $blockObjs = $blockHandler->getAll($criteria);
 
         foreach ($blockObjs as $blockObj) {
@@ -56,11 +56,11 @@ function xoops_module_update_waiting($module, $version)
         }
 
         $fieldsArray = ['func_num', 'name', 'options'];
-        $criteria    = new CriteriaCompo();
-        $criteria->add(new Criteria('mid', $mid));
-        //        $criteria->add(new Criteria('func_num', $i));
-        $criteria->add(new Criteria('show_func'), addslashes($waitingModuleConfig['blocks'][$i]['show_func']));
-        $criteria->add(new Criteria('func_file', addslashes($waitingModuleConfig['blocks'][$i]['file'])));
+        $criteria    = new \CriteriaCompo();
+        $criteria->add(new \Criteria('mid', $mid));
+        //        $criteria->add(new \Criteria('func_num', $i));
+        $criteria->add(new \Criteria('show_func'), addslashes($waitingModuleConfig['blocks'][$i]['show_func']));
+        $criteria->add(new \Criteria('func_file', addslashes($waitingModuleConfig['blocks'][$i]['file'])));
         $fblockObjs = $blockHandler->getObjects($criteria);
         foreach ($fblockObjs as $fblockObj) {
             if (!empty($fblockObj->options())) {

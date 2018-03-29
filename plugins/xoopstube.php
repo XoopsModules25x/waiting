@@ -11,7 +11,7 @@
  */
 function b_waiting_xoopstube()
 {
-    $xoopsDB = XoopsDatabaseFactory::getDatabaseConnection();
+    $xoopsDB = \XoopsDatabaseFactory::getDatabaseConnection();
     $ret     = [];
     // xoopstube waiting
     $block  = [];

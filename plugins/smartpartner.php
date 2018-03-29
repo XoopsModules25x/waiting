@@ -7,7 +7,7 @@
  */
 function b_waiting_smartpartner()
 {
-    $xoopsDB = XoopsDatabaseFactory::getDatabaseConnection();
+    $xoopsDB = \XoopsDatabaseFactory::getDatabaseConnection();
     $block   = [];
 
     // smartpartner submitted

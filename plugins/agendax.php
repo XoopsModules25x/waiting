@@ -5,7 +5,7 @@
  */
 function b_waiting_agendax()
 {
-    $xoopsDB = XoopsDatabaseFactory::getDatabaseConnection();
+    $xoopsDB = \XoopsDatabaseFactory::getDatabaseConnection();
     $block   = [];
 
     // agenda-x events

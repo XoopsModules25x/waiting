@@ -13,7 +13,7 @@
  */
 function b_waiting_xyp4all()
 {
-    $xoopsDB = XoopsDatabaseFactory::getDatabaseConnection();
+    $xoopsDB = \XoopsDatabaseFactory::getDatabaseConnection();
     $ret     = [];
 
     // xyp4all links

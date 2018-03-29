@@ -13,7 +13,7 @@
  */
 function b_waiting_PDlinks()
 {
-    $xoopsDB = XoopsDatabaseFactory::getDatabaseConnection();
+    $xoopsDB = \XoopsDatabaseFactory::getDatabaseConnection();
     $ret     = [];
 
     // PDlinks waiting

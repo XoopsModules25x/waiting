@@ -23,7 +23,7 @@
 
 use XoopsModules\Waiting;
 
-require_once __DIR__ . '/../class/Helper.php';
+// require_once __DIR__ . '/../class/Helper.php';
 //require_once __DIR__ . '/../include/common.php';
 $helper = Waiting\Helper::getInstance();
 

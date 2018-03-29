@@ -56,13 +56,13 @@ function b_waiting_waiting_show($options)
     }
 
     $plugins_path = XOOPS_ROOT_PATH . '/modules/waiting/plugins';
-    $xoopsDB      = XoopsDatabaseFactory::getDatabaseConnection();
+    $xoopsDB      = \XoopsDatabaseFactory::getDatabaseConnection();
     /** @var XoopsModuleHandler $moduleHandler */
     $moduleHandler = xoops_getHandler('module');
     $block         = [];
 
     // get module's list installed
-    $mod_lists = $moduleHandler->getList(new Criteria(1, 1), true);
+    $mod_lists = $moduleHandler->getList(new \Criteria(1, 1), true);
     foreach ($mod_lists as $dirname => $name) {
         $plugin_info = waiting_get_plugin_info($dirname, $userLang);
         if (empty($plugin_info) || empty($plugin_info['plugin_path'])) {

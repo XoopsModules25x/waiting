@@ -4,7 +4,7 @@
  */
 function b_waiting_mylinks()
 {
-    $xoopsDB = XoopsDatabaseFactory::getDatabaseConnection();
+    $xoopsDB = \XoopsDatabaseFactory::getDatabaseConnection();
     $ret     = [];
 
     // mylinks links

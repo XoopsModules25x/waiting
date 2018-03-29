@@ -4,7 +4,7 @@
  */
 function b_waiting_tutorials()
 {
-    $xoopsDB = XoopsDatabaseFactory::getDatabaseConnection();
+    $xoopsDB = \XoopsDatabaseFactory::getDatabaseConnection();
     $block   = [];
 
     // tutorials

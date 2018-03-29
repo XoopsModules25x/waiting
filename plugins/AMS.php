@@ -4,7 +4,7 @@
  */
 function b_waiting_AMS()
 {
-    $xoopsDB = XoopsDatabaseFactory::getDatabaseConnection();
+    $xoopsDB = \XoopsDatabaseFactory::getDatabaseConnection();
     $block   = [];
 
     // AMS articles

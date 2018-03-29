@@ -13,7 +13,7 @@
  */
 function b_waiting_PDdownloads()
 {
-    $xoopsDB = XoopsDatabaseFactory::getDatabaseConnection();
+    $xoopsDB = \XoopsDatabaseFactory::getDatabaseConnection();
     $ret     = [];
 
     // PDdownloads waiting

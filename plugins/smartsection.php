@@ -13,7 +13,7 @@
  */
 function b_waiting_smartsection()
 {
-    $xoopsDB = XoopsDatabaseFactory::getDatabaseConnection();
+    $xoopsDB = \XoopsDatabaseFactory::getDatabaseConnection();
     $ret     = [];
 
     // smartsection submitted

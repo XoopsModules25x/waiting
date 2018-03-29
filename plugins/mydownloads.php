@@ -4,7 +4,7 @@
  */
 function b_waiting_mydownloads()
 {
-    $xoopsDB = XoopsDatabaseFactory::getDatabaseConnection();
+    $xoopsDB = \XoopsDatabaseFactory::getDatabaseConnection();
     $ret     = [];
 
     // mydownloads links
