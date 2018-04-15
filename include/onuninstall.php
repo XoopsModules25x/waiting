@@ -8,6 +8,7 @@
  * @link            https://xoops.org XOOPS
  */
 
+use XoopsModules\Waiting;
 
 /**
  * Prepares system prior to attempting to uninstall module
@@ -16,7 +17,7 @@
  * @return bool true if ready to uninstall, false if not
  */
 
-function xoops_module_pre_uninstall_xxxx(\XoopsModule $module)
+function xoops_module_pre_uninstall_waiting(\XoopsModule $module)
 {
     // Do some synchronization
     return true;
@@ -29,22 +30,18 @@ function xoops_module_pre_uninstall_xxxx(\XoopsModule $module)
  *
  * @return bool true if uninstallation successful, false if not
  */
-function xoops_module_uninstall_xxxx(\XoopsModule $module)
+function xoops_module_uninstall_waiting(\XoopsModule $module)
 {
-//    return true;
+    //    return true;
 
     $moduleDirName = basename(dirname(__DIR__));
-     $helper      =XXX\Helper::getInstance();
+    $helper        = Waiting\Helper::getInstance();
 
-    /** @var XXXXXXUtility $utility */
-    $utility     = ucfirst($moduleDirName) . 'Utility';
-    if (!class_exists($utility)) {
-        xoops_load('utility', $moduleDirName);
-    }
+    /** @var \XoopsModules\Waiting\Utility $utility */
+    $utility = new \XoopsModules\Waiting\Utility();
 
     $success = true;
     $helper->loadLanguage('admin');
-
 
     //------------------------------------------------------------------
     // Remove uploads folder (and all subfolders) if they exist

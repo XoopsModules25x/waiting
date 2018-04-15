@@ -45,7 +45,7 @@ function b_waiting_waiting_show($options)
         }
     }
 
-    require_once __DIR__ . '/../include/functions.php';
+    require_once  dirname(__DIR__) . '/include/functions.php';
 
     // read language files for plugins
     $lang_dir = XOOPS_ROOT_PATH . '/modules/waiting/language';
