@@ -4,6 +4,7 @@
  */
 function b_waiting_recette()
 {
+        /** @var \XoopsMySQLDatabase $xoopsDB */
     $xoopsDB = \XoopsDatabaseFactory::getDatabaseConnection();
     $block   = [];
 

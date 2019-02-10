@@ -6,6 +6,7 @@
  */
 function b_waiting_smartfaq()
 {
+    /** @var \XoopsMySQLDatabase $xoopsDB */
     $xoopsDB = \XoopsDatabaseFactory::getDatabaseConnection();
     $ret     = [];
 

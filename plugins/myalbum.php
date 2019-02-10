@@ -5,6 +5,7 @@
  */
 function b_waiting_myalbum_0($mydirnumber = '')
 {
+        /** @var \XoopsMySQLDatabase $xoopsDB */
     $xoopsDB = \XoopsDatabaseFactory::getDatabaseConnection();
     $block   = [];
 

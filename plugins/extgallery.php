@@ -11,6 +11,7 @@
  */
 function b_waiting_extgallery()
 {
+        /** @var \XoopsMySQLDatabase $xoopsDB */
     $xoopsDB = \XoopsDatabaseFactory::getDatabaseConnection();
     $block   = [];
 

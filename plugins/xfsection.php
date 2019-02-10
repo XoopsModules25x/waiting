@@ -8,6 +8,7 @@
  */
 function b_waiting_xfsection()
 {
+    /** @var \XoopsMySQLDatabase $xoopsDB */
     $xoopsDB = \XoopsDatabaseFactory::getDatabaseConnection();
     $ret     = [];
 

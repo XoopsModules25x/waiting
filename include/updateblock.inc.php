@@ -40,6 +40,7 @@ function xoops_module_update_waiting($module, $version)
 
         $count = count($waitingModuleConfig['blocks']);
 
+        /** @var \XoopsBlockHandler $blockHandler */
         $blockHandler = xoops_getHandler('block');
         $criteria     = new \CriteriaCompo();
         $criteria->add(new \Criteria('mid', $mid));

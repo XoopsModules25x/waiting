@@ -4,6 +4,7 @@
  */
 function b_waiting_myAds()
 {
+        /** @var \XoopsMySQLDatabase $xoopsDB */
     $xoopsDB = \XoopsDatabaseFactory::getDatabaseConnection();
     $block   = [];
 

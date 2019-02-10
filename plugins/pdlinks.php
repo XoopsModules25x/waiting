@@ -13,6 +13,7 @@
  */
 function b_waiting_PDlinks()
 {
+        /** @var \XoopsMySQLDatabase $xoopsDB */
     $xoopsDB = \XoopsDatabaseFactory::getDatabaseConnection();
     $ret     = [];
 

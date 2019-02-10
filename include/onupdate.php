@@ -30,7 +30,7 @@ function tableExists($tablename)
 {
     $result = $GLOBALS['xoopsDB']->queryF("SHOW TABLES LIKE '$tablename'");
 
-    return ($GLOBALS['xoopsDB']->getRowsNum($result) > 0) ? true : false;
+    return $GLOBALS['xoopsDB']->getRowsNum($result) > 0;
 }
 
 /**
@@ -74,7 +74,7 @@ function xoops_module_update_waiting(\XoopsModule $module, $previousVersion = nu
 
     if ($previousVersion < 240) {
         //rename column EXAMPLE
-        $tables     = new Tables();
+        $tables     = new \Xmf\Database\Tables();
         $table      = 'waitingx_categories';
         $column     = 'ordre';
         $newName    = 'order';
@@ -82,7 +82,7 @@ function xoops_module_update_waiting(\XoopsModule $module, $previousVersion = nu
         if ($tables->useTable($table)) {
             $tables->alterColumn($table, $column, $attributes, $newName);
             if (!$tables->executeQueue()) {
-                echo '<br>' . _AM_WAITING_UPGRADEFAILED0 . ' ' . $migrate->getLastError();
+                echo '<br>' . _AM_WAITING_UPGRADEFAILED0 . ' ' . $tables->getLastError();
             }
         }
 
@@ -121,7 +121,7 @@ function xoops_module_update_waiting(\XoopsModule $module, $previousVersion = nu
             //    foreach (array_keys($GLOBALS['uploadFolders']) as $i) {
             foreach (array_keys($configurator->oldFolders) as $i) {
                 $tempFolder = $GLOBALS['xoops']->path('modules/' . $moduleDirName . $configurator->oldFolders[$i]);
-                /* @var $folderHandler XoopsObjectHandler */
+                /* @var XoopsObjectHandler $folderHandler */
                 $folderHandler = XoopsFile::getHandler('folder', $tempFolder);
                 $folderHandler->delete($tempFolder);
             }

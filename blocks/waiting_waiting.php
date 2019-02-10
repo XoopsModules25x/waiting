@@ -22,6 +22,8 @@
  * @since           2.00
  */
 
+use XoopsModules\Waiting;
+
 // EXTENSIBLE "waiting block" by plugins in both waiting and modules
 
 /**
@@ -47,22 +49,20 @@ function b_waiting_waiting_show($options)
 
     require_once dirname(__DIR__) . '/include/functions.php';
 
+    /** @var \XoopsModules\Waiting\Helper $helper */
+    $helper      = \XoopsModules\Waiting\Helper::getInstance();
     // read language files for plugins
-    $lang_dir = XOOPS_ROOT_PATH . '/modules/waiting/language';
-    if (file_exists("{$lang_dir}/{$userLang}/plugins.php")) {
-        require_once "{$lang_dir}/{$userLang}/plugins.php";
-    } elseif (file_exists("{$lang_dir}/english/plugins.php")) {
-        require_once "{$lang_dir}/english/plugins.php";
-    }
+    $helper->loadLanguage('plugins');
 
     $plugins_path = XOOPS_ROOT_PATH . '/modules/waiting/plugins';
+    /** @var \XoopsMySQLDatabase $xoopsDB */
     $xoopsDB      = \XoopsDatabaseFactory::getDatabaseConnection();
     /** @var \XoopsModuleHandler $moduleHandler */
     $moduleHandler = xoops_getHandler('module');
     $block         = [];
 
     // get module's list installed
-    $mod_lists = $moduleHandler->getList(new \Criteria(1, 1), true);
+    $mod_lists = $moduleHandler->getList(new \Criteria(''), true);
     foreach ($mod_lists as $dirname => $name) {
         $plugin_info = waiting_get_plugin_info($dirname, $userLang);
         if (empty($plugin_info) || empty($plugin_info['plugin_path'])) {
@@ -121,7 +121,7 @@ function b_waiting_waiting_show($options)
 
     // SQL cache touch (you have to use this cache with block's cache by system)
     if (empty($block) && $sql_cache_min > 0) {
-        $fp = fopen($sql_cache_file, 'w');
+        $fp = fopen($sql_cache_file, 'wb');
         fclose($fp);
     }
 

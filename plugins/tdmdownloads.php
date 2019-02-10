@@ -13,6 +13,7 @@
  */
 function b_waiting_tdmdownloads()
 {
+    /** @var \XoopsMySQLDatabase $xoopsDB */
     $xoopsDB = \XoopsDatabaseFactory::getDatabaseConnection();
     $ret     = [];
     // TDMdownloads waiting

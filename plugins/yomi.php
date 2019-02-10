@@ -9,7 +9,7 @@ function b_waiting_yomi()
     $lang_linkname = 'Yomi';
     $block         = [];
     $cTemp         = 0;
-    $fp            = fopen("{$log_path}{$log_file}", 'r');
+    $fp            = fopen("{$log_path}{$log_file}", 'rb');
 
     while ($tmp = fgets($fp, 4096)) {
         ++$cTemp;

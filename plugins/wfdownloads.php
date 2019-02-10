@@ -16,6 +16,7 @@
  */
 function b_waiting_wfdownloads()
 {
+        /** @var \XoopsMySQLDatabase $xoopsDB */
     $xoopsDB = \XoopsDatabaseFactory::getDatabaseConnection();
     $ret     = [];
 

@@ -6,6 +6,7 @@
  */
 function b_waiting_smartpartner()
 {
+        /** @var \XoopsMySQLDatabase $xoopsDB */
     $xoopsDB = \XoopsDatabaseFactory::getDatabaseConnection();
     $block   = [];
 

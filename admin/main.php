@@ -34,7 +34,7 @@ $plugins_path = XOOPS_ROOT_PATH . '/modules/waiting/plugins';
 $moduleHandler = xoops_getHandler('module');
 $block         = [];
 
-$mod_lists = $moduleHandler->getList(new \Criteria(1, 1), true);
+$mod_lists = $moduleHandler->getList(new \Criteria(''), true);
 $mod_objs  = $moduleHandler->getObjects(); // get all module objects
 
 echo '<h4>'

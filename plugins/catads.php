@@ -5,7 +5,7 @@
 function b_waiting_catads()
 {
     $block    = [];
-    $ads_hnd  = $helper->getHandler('Ads', 'catads');
+    $ads_hnd  = xoops_getModuleHandler('Ads', 'catads');
     $criteria = new \Criteria('waiting', '1', '=');
     $nbads    = $ads_hnd->getCount($criteria);
     if ($nbads > 0) {
