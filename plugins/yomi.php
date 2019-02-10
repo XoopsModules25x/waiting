@@ -20,7 +20,7 @@ function b_waiting_yomi()
         $block = [
             'adminlink'     => XOOPS_URL . '/modules/yomi/admin.php',
             'pendingnum'    => $cTemp,
-            'lang_linkname' => _PI_WAITING_WAITINGS
+            'lang_linkname' => _PI_WAITING_WAITINGS,
         ];
     }
 

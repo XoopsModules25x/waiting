@@ -22,16 +22,15 @@
  * @link            https://xoops.org XOOPS
  */
 
-require_once  dirname(dirname(dirname(__DIR__))) . '/include/cp_header.php';
-require_once  dirname(__DIR__) . '/include/functions.php';
 require_once __DIR__ . '/admin_header.php';
+require_once dirname(__DIR__) . '/include/functions.php';
 xoops_cp_header();
 
 $adminObject = \Xmf\Module\Admin::getInstance();
 $adminObject->displayNavigation(basename(__FILE__));
 
 $plugins_path = XOOPS_ROOT_PATH . '/modules/waiting/plugins';
-/** @var XoopsModuleHandler $moduleHandler */
+/** @var \XoopsModuleHandler $moduleHandler */
 $moduleHandler = xoops_getHandler('module');
 $block         = [];
 
@@ -76,4 +75,4 @@ foreach ($mod_objs as $this_obj) {
 echo "</table>\n";
 echo _AM_WAITING_PLUGINLIST_DESC;
 
-include __DIR__ . '/admin_footer.php';
+require_once __DIR__ . '/admin_footer.php';

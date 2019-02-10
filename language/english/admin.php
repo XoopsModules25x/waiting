@@ -21,9 +21,8 @@
  * @link            http://ryus.co.jp Ryu's Planning
  * @link            https://xoops.org XOOPS
  */
-
 define('_AM_WAITING_MODNAME', 'Modules');
-define('_AM_WAITING_DIRNAME', 'Directory name');// dirname added by cesag
+define('_AM_WAITING_DIRNAME', 'Directory name'); // dirname added by cesag
 define('_AM_WAITING_STATUS', 'Status');
 define('_AM_WAITING_MODACTIVE', 'Module Active');
 define('_AM_WAITING_PLUGINLIST', 'Plugin Checker');

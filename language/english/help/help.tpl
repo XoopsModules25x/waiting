@@ -12,12 +12,12 @@
     No special measures necessary, follow the standard installation process - extract the /randomquote folder into the
     ../modules directory. Install the module through Admin -> System Module -> Modules. If you need detailed
     instructions on how to install a module, please see the <a
-        href="https://www.gitbook.com/book/xoops/xoops-operations-guide/" target="_blank">XOOPS Operations
+        href="https://xoops.gitbook.io/xoops-operations-guide/" target="_blank">XOOPS Operations
     Manual</a>.<br><br></p>
 
 <h4 class="odd">Operations</h4><br>
 <p>Detailed instructions on configuring the access rights for user groups are available in the
-    <a href="https://www.gitbook.com/book/xoops/xoops-operations-guide/" target="_blank">XOOPS Operations Manual</a></p>
+    <a href="https://xoops.gitbook.io/xoops-operations-guide/" target="_blank">XOOPS Operations Manual</a></p>
 <br><br>
 
 <h4 class="odd">TUTORIAL</h4>

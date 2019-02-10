@@ -8,15 +8,12 @@
  * @link            https://xoops.org XOOPS
  */
 
-use XoopsModules\Waiting;
-
 /**
  * Prepares system prior to attempting to uninstall module
  * @param XoopsModule $module {@link XoopsModule}
  *
  * @return bool true if ready to uninstall, false if not
  */
-
 function xoops_module_pre_uninstall_waiting(\XoopsModule $module)
 {
     // Do some synchronization
@@ -24,7 +21,6 @@ function xoops_module_pre_uninstall_waiting(\XoopsModule $module)
 }
 
 /**
- *
  * Performs tasks required during uninstallation of the module
  * @param XoopsModule $module {@link XoopsModule}
  *
@@ -34,8 +30,10 @@ function xoops_module_uninstall_waiting(\XoopsModule $module)
 {
     //    return true;
 
-    $moduleDirName = basename(dirname(__DIR__));
-    $helper        = Waiting\Helper::getInstance();
+    $moduleDirName      = basename(dirname(__DIR__));
+    $moduleDirNameUpper = mb_strtoupper($moduleDirName);
+    /** @var \XoopsModules\Waiting\Helper $helper */
+    $helper = \XoopsModules\Waiting\Helper::getInstance();
 
     /** @var \XoopsModules\Waiting\Utility $utility */
     $utility = new \XoopsModules\Waiting\Utility();
@@ -67,7 +65,7 @@ function xoops_module_uninstall_waiting(\XoopsModule $module)
     $xmlfile = $GLOBALS['xoops']->path('xsitemap.xml');
     if (is_file($xmlfile)) {
         if (false === ($delOk = unlink($xmlfile))) {
-            $module->setErrors(sprintf(_AM_XXXXX_ERROR_BAD_REMOVE, $xmlfile));
+            $module->setErrors(sprintf(_AM_WAITING_ERROR_BAD_REMOVE, $xmlfile));
         }
     }
 //    return $success && $delOk; // use this if you're using this routine

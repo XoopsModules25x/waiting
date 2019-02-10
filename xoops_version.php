@@ -22,13 +22,12 @@
  * @link            https://xoops.org XOOPS
  * @since           2.00
  */
-
 require_once __DIR__ . '/preloads/autoloader.php';
 
 $moduleDirName                     = basename(__DIR__);
-$modversion['version']             = 1.06;
+$modversion['version']             = 1.07;
 $modversion['module_status']       = 'RC1';
-$modversion['release_date']        = '2017/05/30';
+$modversion['release_date']        = '2019/02/09';
 $modversion['name']                = _MI_WAITING_NAME;
 $modversion['description']         = _MI_WAITING_DESC;
 $modversion['author']              = 'Ryuji (http://ryus.co.jp/)';
@@ -76,5 +75,5 @@ $modversion['blocks'][1]['options']     = '1|5';
 
 // On Update
 if (!empty($_POST['fct']) && !empty($_POST['op']) && 'modulesadmin' === $_POST['fct'] && 'update_ok' === $_POST['op'] && $_POST['module'] == $moduleDirName) {
-    include __DIR__ . '/include/updateblock.inc.php';
+    require_once __DIR__ . '/include/updateblock.inc.php';
 }

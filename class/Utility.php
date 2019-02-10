@@ -1,8 +1,6 @@
-<?php namespace XoopsModules\Waiting;
+<?php
 
-use Xmf\Request;
-use XoopsModules\Waiting;
-use XoopsModules\Waiting\Common;
+namespace XoopsModules\Waiting;
 
 /**
  * Class Utility

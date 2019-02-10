@@ -3,7 +3,6 @@
  * XoopsFAQ plugin
  *
  * @author Marius Scurtescu <mariuss@romanians.bc.ca>
- *
  */
 function b_waiting_smartfaq()
 {

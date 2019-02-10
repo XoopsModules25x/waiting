@@ -19,7 +19,6 @@
  * @license         {@link http://www.fsf.org/copyleft/gpl.html GNU public license}
  * @link            https://xoops.org XOOPS
  */
-
 require_once __DIR__ . '/admin_header.php';
 
 xoops_cp_header();

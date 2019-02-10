@@ -21,7 +21,6 @@
  * @link            http://ryus.co.jp Ryu's Planning
  * @link            https://xoops.org XOOPS
  */
-
 define('_PI_WAITING_WAITINGS', 'Waitings');
 define('_PI_WAITING_SUBMITTED', 'Submitted');
 define('_PI_WAITING_INACTIVE_USERS', 'Inactive Users');

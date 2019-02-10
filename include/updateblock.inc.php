@@ -19,22 +19,19 @@
  * @license         {@link http://www.fsf.org/copyleft/gpl.html GNU public license}
  * @link            https://xoops.org XOOPS
  */
-
 if ((!defined('XOOPS_ROOT_PATH')) || !($GLOBALS['xoopsUser'] instanceof \XoopsUser) || !$GLOBALS['xoopsUser']->IsAdmin()) {
     exit('Restricted Access - ' . basename($_SERVER['PHP_SELF']) . PHP_EOL);
 }
 /**
- *
  * Waiting Block installation update
  * @param XoopsModule $module  {@see XoopsModule}
- * @param integer     $version currently installed module version
+ * @param int         $version currently installed module version
  *
  * @return bool success
  */
 function xoops_module_update_waiting($module, $version)
 {
     return true;  // force return - following code is really only needed for XOOPS < 2.3
-
     // Keep Block option values when update (by nobunobu)
     $mid = $module->mid();
     if ($mid) {

@@ -21,7 +21,6 @@
  * @link            http://ryus.co.jp Ryu's Planning
  * @link            https://xoops.org XOOPS
  */
-
 $pathIcon32 = \Xmf\Module\Admin::iconUrl('', 32);
 echo "<div class='adminfooter'>\n" . "  <div style='text-align: center;'>\n" . "    <a href='https://xoops.org' rel='external'><img src='{$pathIcon32}/xoopsmicrobutton.gif' alt='XOOPS' title='XOOPS'></a>\n" . "  </div>\n" . '  ' . _AM_WAITING_FOOTER . "\n" . '</div>';
 

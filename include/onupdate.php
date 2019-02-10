@@ -16,12 +16,8 @@
  * @since
  * @author       XOOPS Development Team
  */
-
-use XoopsModules\Waiting;
-
 if ((!defined('XOOPS_ROOT_PATH')) || !($GLOBALS['xoopsUser'] instanceof \XoopsUser)
-    || !$GLOBALS['xoopsUser']->IsAdmin()
-) {
+    || !$GLOBALS['xoopsUser']->IsAdmin()) {
     exit('Restricted access' . PHP_EOL);
 }
 
@@ -38,7 +34,6 @@ function tableExists($tablename)
 }
 
 /**
- *
  * Prepares system prior to attempting to install module
  * @param XoopsModule $module {@link XoopsModule}
  *
@@ -47,39 +42,37 @@ function tableExists($tablename)
 function xoops_module_pre_update_waiting(\XoopsModule $module)
 {
     $moduleDirName = basename(dirname(__DIR__));
-    /** @var Waiting\Helper $helper */
-    /** @var Waiting\Utility $utility */
-    $helper       = Waiting\Helper::getInstance();
-    $utility      = new Waiting\Utility();
+    /** @var \XoopsModules\Waiting\Helper $helper */
+    /** @var \XoopsModules\Waiting\Utility $utility */
+    $helper  = \XoopsModules\Waiting\Helper::getInstance();
+    $utility = new \XoopsModules\Waiting\Utility();
 
     $xoopsSuccess = $utility::checkVerXoops($module);
     $phpSuccess   = $utility::checkVerPhp($module);
+
     return $xoopsSuccess && $phpSuccess;
 }
 
 /**
- *
  * Performs tasks required during update of the module
  * @param XoopsModule $module {@link XoopsModule}
  * @param null        $previousVersion
  *
  * @return bool true if update successful, false if not
  */
-
 function xoops_module_update_waiting(\XoopsModule $module, $previousVersion = null)
 {
-    $moduleDirName = basename(dirname(__DIR__));
-    $capsDirName   = strtoupper($moduleDirName);
+    $moduleDirName      = basename(dirname(__DIR__));
+    $moduleDirNameUpper = mb_strtoupper($moduleDirName);
 
-    /** @var Waiting\Helper $helper */
-    /** @var Waiting\Utility $utility */
-    /** @var Waiting\Configurator $configurator */
-    $helper  = Waiting\Helper::getInstance();
-    $utility = new Waiting\Utility();
-    $configurator = new Waiting\Configurator();
+    /** @var \XoopsModules\Waiting\Helper $helper */
+    /** @var \XoopsModules\Waiting\Utility $utility */
+    /** @var \XoopsModules\Waiting\Common\Configurator $configurator */
+    $helper       = \XoopsModules\Waiting\Helper::getInstance();
+    $utility      = new \XoopsModules\Waiting\Utility();
+    $configurator = new \XoopsModules\Waiting\Common\Configurator();
 
     if ($previousVersion < 240) {
-
         //rename column EXAMPLE
         $tables     = new Tables();
         $table      = 'waitingx_categories';
@@ -89,7 +82,7 @@ function xoops_module_update_waiting(\XoopsModule $module, $previousVersion = nu
         if ($tables->useTable($table)) {
             $tables->alterColumn($table, $column, $attributes, $newName);
             if (!$tables->executeQueue()) {
-                echo '<br>' . _AM_XXXXX_UPGRADEFAILED0 . ' ' . $migrate->getLastError();
+                echo '<br>' . _AM_WAITING_UPGRADEFAILED0 . ' ' . $migrate->getLastError();
             }
         }
 
@@ -144,7 +137,7 @@ function xoops_module_update_waiting(\XoopsModule $module, $previousVersion = nu
 
         //  ---  COPY blank.png FILES ---------------
         if (count($configurator->copyBlankFiles) > 0) {
-            $file =  dirname(__DIR__) . '/assets/images/blank.png';
+            $file = dirname(__DIR__) . '/assets/images/blank.png';
             foreach (array_keys($configurator->copyBlankFiles) as $i) {
                 $dest = $configurator->copyBlankFiles[$i] . '/blank.png';
                 $utility::copyFile($file, $dest);
@@ -155,9 +148,11 @@ function xoops_module_update_waiting(\XoopsModule $module, $previousVersion = nu
         $sql = 'DELETE FROM ' . $GLOBALS['xoopsDB']->prefix('tplfile') . " WHERE `tpl_module` = '" . $module->getVar('dirname', 'n') . '\' AND `tpl_file` LIKE \'%.html%\'';
         $GLOBALS['xoopsDB']->queryF($sql);
 
-        /** @var XoopsGroupPermHandler $grouppermHandler */
+        /** @var \XoopsGroupPermHandler $grouppermHandler */
         $grouppermHandler = xoops_getHandler('groupperm');
+
         return $grouppermHandler->deleteByModule($module->getVar('mid'), 'item_read');
     }
+
     return true;
 }

@@ -45,7 +45,7 @@ function b_waiting_waiting_show($options)
         }
     }
 
-    require_once  dirname(__DIR__) . '/include/functions.php';
+    require_once dirname(__DIR__) . '/include/functions.php';
 
     // read language files for plugins
     $lang_dir = XOOPS_ROOT_PATH . '/modules/waiting/language';
@@ -57,7 +57,7 @@ function b_waiting_waiting_show($options)
 
     $plugins_path = XOOPS_ROOT_PATH . '/modules/waiting/plugins';
     $xoopsDB      = \XoopsDatabaseFactory::getDatabaseConnection();
-    /** @var XoopsModuleHandler $moduleHandler */
+    /** @var \XoopsModuleHandler $moduleHandler */
     $moduleHandler = xoops_getHandler('module');
     $block         = [];
 
@@ -78,7 +78,7 @@ function b_waiting_waiting_show($options)
         if (function_exists(@$plugin_info['func'])) {
             // get the list of waitings
             $_tmp = call_user_func($plugin_info['func'], $dirname);
-            if (isset($_tmp['lang_linkname'])) {
+            if (\Xmf\Request::hasVar('lang_linkname', 'tmp')) {
                 if (@$_tmp['pendingnum'] > 0 || $options[0] > 0) {
                     $block['modules'][$dirname]['pending'][] = $_tmp;
                 }

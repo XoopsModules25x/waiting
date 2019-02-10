@@ -23,29 +23,31 @@
 
 use XoopsModules\Waiting;
 
-// require_once  dirname(__DIR__) . '/class/Helper.php';
 //require_once  dirname(__DIR__) . '/include/common.php';
-$helper = Waiting\Helper::getInstance();
+/** @var \XoopsModules\Waiting\Helper $helper */
+$helper = \XoopsModules\Waiting\Helper::getInstance();
 
 $pathIcon32 = \Xmf\Module\Admin::menuIconPath('');
-$pathModIcon32 = $helper->getModule()->getInfo('modicons32');
+if (is_object($helper->getModule())) {
+    $pathModIcon32 = $helper->getModule()->getInfo('modicons32');
+}
 
 $adminmenu = [
     [
         'title' => _MI_WAITING_MENU_HOME,
         'link'  => 'admin/index.php',
-        'icon'  => "{$pathIcon32}/home.png"
+        'icon'  => "{$pathIcon32}/home.png",
     ],
 
     [
         'title' => _MI_WAITING_MENU_PLUGINS,
         'link'  => 'admin/main.php',
-        'icon'  => "{$pathIcon32}/search.png"
+        'icon'  => "{$pathIcon32}/search.png",
     ],
 
     [
         'title' => _MI_WAITING_MENU_ABOUT,
         'link'  => 'admin/about.php',
-        'icon'  => "{$pathIcon32}/about.png"
-    ]
+        'icon'  => "{$pathIcon32}/about.png",
+    ],
 ];
