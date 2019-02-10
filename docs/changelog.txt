@@ -1,10 +1,12 @@
----------------------------------------
-1.06 RC 1  2016-05-30
----------------------------------------
+<h5>1.07 RC 1   [WORK IN PROGRESS - NOT RELEASED]</h5>  Dev: XOOPS 2.5.9, PHP 7.3.2
+<hr>
+- namespaces (mamba)
+- class autoloading (mamba)
+WORK IN PROGRESS
 
----------------------------------------
-1.06 Beta 2  2016-05-16
----------------------------------------
+
+<h5>1.06 Beta 2  [2016-05-16]</h5>
+<hr>
 - fix missing table row (&lt;tr&gt;) in Admin (./admin/main.php) (zyspec)
 - fix bug in xdirectory plugin - mod requests not shown (zyspec)
 - improve block rendering if no items waiting (zyspec)
@@ -15,45 +17,38 @@
 - remove pass-by-reference for PHP7 compatibility (zyspec)
 - minor cleanup (mamba)
 
----------------------------------------
-1.06 Beta 1  2013-04-20
----------------------------------------
+<h5>1.06 Beta 1  [2013-04-20]</h5>
+<hr>
 - Converted to XOOPS 2.5.5 Admin GUI (Mamba)
 
----------------------------------------
-1.05 2008-12-08
----------------------------------------
+<h5>1.05 [2008-12-08]</h5>
+<hr>
 - updated README
 - updated mymenu
 - added language files
 -- portuguesebr (thx leco1)
 
----------------------------------------
-1.04 2008-12-05
----------------------------------------
+<h5>1.04 [2008-12-05]</h5>
+<hr>
 - modified the compatibilities with XCL2.1
 - modified MySQL5 compatibility
 - changed altsys friendly module
 
----------------------------------------
-1.03 2006-07-13
----------------------------------------
+<h5>1.03 [2006-07-13]</h5>
+<hr>
 - modified xoops_version.php as hasMain=1 (thx Rollei)
 - added language files
 -- persian (thx voltan) 1.03a
 
----------------------------------------
-1.02 2005-12-03
----------------------------------------
+<h5>1.02 [2005-12-03]</h5>
+<hr>
 - updated myblocksadmin 0.41 & mymenu 0.15a
 - updated module icon (thx argon)
 
----------------------------------------
-1.01   2005-07-21
----------------------------------------
+<h5>1.01   2005-07-21</h5>
+<hr>
 - fixed a bug in JavaScript (thx yamaichi)
 
----------------------------------------
-1.00   2005-05-25
----------------------------------------
+<h5>1.00   [2005-05-25]</h5>
+<hr>
 - the 1st release
