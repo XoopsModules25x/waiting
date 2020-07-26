@@ -1,7 +1,8 @@
-<h5>1.07 RC 1   [WORK IN PROGRESS - NOT RELEASED]</h5>  Dev: XOOPS 2.5.9, PHP 7.3.2
+<h5>1.07 RC 1   [WORK IN PROGRESS - NOT RELEASED]</h5>  Dev: XOOPS 2.5.10, PHP 7.4.8
 <hr>
 - namespaces (mamba)
 - class autoloading (mamba)
+- cosmetics (mamba)
 WORK IN PROGRESS
 
 
