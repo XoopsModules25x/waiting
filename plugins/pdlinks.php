@@ -1,5 +1,6 @@
 <?php
 /*************************************************************************/
+
 # Waiting Contents Extensible                                            #
 # Plugin for module PDlinks                                              #
 #                                                                        #
@@ -13,7 +14,7 @@
  */
 function b_waiting_PDlinks()
 {
-        /** @var \XoopsMySQLDatabase $xoopsDB */
+    /** @var \XoopsMySQLDatabase $xoopsDB */
     $xoopsDB = \XoopsDatabaseFactory::getDatabaseConnection();
     $ret     = [];
 

@@ -8,6 +8,7 @@
  but WITHOUT ANY WARRANTY; without even the implied warranty of
  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
 */
+
 /**
  * Module: Waiting
  *
@@ -38,7 +39,7 @@ function b_waiting_waiting_show($options)
     $sql_cache_file = XOOPS_CACHE_PATH . '/waiting_touch';
 
     // SQL cache check (you have to use this cache with block's cache by system)
-    if (file_exists($sql_cache_file)) {
+    if (is_file($sql_cache_file)) {
         $sql_cache_mtime = filemtime($sql_cache_file);
         if (time() < $sql_cache_mtime + $sql_cache_min * 60) {
             return [];
@@ -50,13 +51,13 @@ function b_waiting_waiting_show($options)
     require_once dirname(__DIR__) . '/include/functions.php';
 
     /** @var \XoopsModules\Waiting\Helper $helper */
-    $helper      = \XoopsModules\Waiting\Helper::getInstance();
+    $helper = \XoopsModules\Waiting\Helper::getInstance();
     // read language files for plugins
     $helper->loadLanguage('plugins');
 
     $plugins_path = XOOPS_ROOT_PATH . '/modules/waiting/plugins';
     /** @var \XoopsMySQLDatabase $xoopsDB */
-    $xoopsDB      = \XoopsDatabaseFactory::getDatabaseConnection();
+    $xoopsDB = \XoopsDatabaseFactory::getDatabaseConnection();
     /** @var \XoopsModuleHandler $moduleHandler */
     $moduleHandler = xoops_getHandler('module');
     $block         = [];

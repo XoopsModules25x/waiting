@@ -26,6 +26,8 @@ use XoopsModules\Waiting;
 //require_once  dirname(__DIR__) . '/include/common.php';
 /** @var \XoopsModules\Waiting\Helper $helper */
 $helper = \XoopsModules\Waiting\Helper::getInstance();
+$helper->loadLanguage('common');
+$helper->loadLanguage('feedback');
 
 $pathIcon32 = \Xmf\Module\Admin::menuIconPath('');
 if (is_object($helper->getModule())) {

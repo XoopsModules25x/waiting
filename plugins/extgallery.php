@@ -1,5 +1,6 @@
 <?php
 /*************************************************************************/
+
 # Waiting Contents Extensible                                            #
 # Plugin for module extgallery                                           #
 # Grom - Frxoops                                                         #
@@ -11,7 +12,7 @@
  */
 function b_waiting_extgallery()
 {
-        /** @var \XoopsMySQLDatabase $xoopsDB */
+    /** @var \XoopsMySQLDatabase $xoopsDB */
     $xoopsDB = \XoopsDatabaseFactory::getDatabaseConnection();
     $block   = [];
 

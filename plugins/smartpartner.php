@@ -1,4 +1,5 @@
 <?php
+
 /**
  * SmartPartner plugin
  *
@@ -6,7 +7,7 @@
  */
 function b_waiting_smartpartner()
 {
-        /** @var \XoopsMySQLDatabase $xoopsDB */
+    /** @var \XoopsMySQLDatabase $xoopsDB */
     $xoopsDB = \XoopsDatabaseFactory::getDatabaseConnection();
     $block   = [];
 

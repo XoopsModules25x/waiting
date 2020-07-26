@@ -1,11 +1,12 @@
 <?php
+
 /**
- * @param  string $mydirnumber
+ * @param string $mydirnumber
  * @return array
  */
 function b_waiting_myalbum_0($mydirnumber = '')
 {
-        /** @var \XoopsMySQLDatabase $xoopsDB */
+    /** @var \XoopsMySQLDatabase $xoopsDB */
     $xoopsDB = \XoopsDatabaseFactory::getDatabaseConnection();
     $block   = [];
 
@@ -21,10 +22,12 @@ function b_waiting_myalbum_0($mydirnumber = '')
 
 for ($i = 0; $i < 3; ++$i) {
     if (file_exists(XOOPS_ROOT_PATH . "/modules/myalbum{$i}/xoops_version.php")) {
-        eval('
+        eval(
+            '
         function b_waiting_myalbum_' . ($i + 1) . '() {
             return b_waiting_myalbum_0(' . $i . ');
         }
-        ');
+        '
+        );
     }
 }

@@ -1,5 +1,6 @@
 <?php
 /*************************************************************************/
+
 # Waiting Contents Extensible                                            #
 # Plugin for module WF-Links                                             #
 #                                                                        #
@@ -13,7 +14,7 @@
  */
 function b_waiting_wflinks()
 {
-        /** @var \XoopsMySQLDatabase $xoopsDB */
+    /** @var \XoopsMySQLDatabase $xoopsDB */
     $xoopsDB = \XoopsDatabaseFactory::getDatabaseConnection();
     $ret     = [];
 

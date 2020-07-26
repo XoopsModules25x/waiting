@@ -25,29 +25,30 @@
  Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307 USA
  ------------------------------------------------------------------------
  */
+
 /**
  * Module: Waiting
  *
- * @category        Module
- * @package         waiting
+ * @param mixed $dirname
+ * @param mixed $language
  * @author          XOOPS Module Development Team
  * @copyright       {@link https://xoops.org 2001-2016 XOOPS Project}
  * @license         {@link http://www.fsf.org/copyleft/gpl.html GNU public license}
  * @link            https://xoops.org XOOPS
- * @param mixed $dirname
- * @param mixed $language
+ * @category        Module
+ * @package         waiting
  */
 
 /**
  * @param         $dirname
- * @param  string $language
+ * @param string  $language
  * @return array
  */
 function waiting_get_plugin_info($dirname, $language = 'english')
 {
     // get $mytrustdirname for D3 modules
     $mytrustdirname = '';
-    if (defined('XOOPS_TRUST_PATH') && file_exists(XOOPS_ROOT_PATH . '/modules/' . $dirname . '/mytrustdirname.php')) {
+    if (defined('XOOPS_TRUST_PATH') && is_file(XOOPS_ROOT_PATH . '/modules/' . $dirname . '/mytrustdirname.php')) {
         @require XOOPS_ROOT_PATH . '/modules/' . $dirname . '/mytrustdirname.php';
     }
 

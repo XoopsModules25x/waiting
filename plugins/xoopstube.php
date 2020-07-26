@@ -1,5 +1,6 @@
 <?php
 /*************************************************************************/
+
 # Waiting Contents Extensible                                            #
 # Plugin for module xoopstube                                            #
 # alain01 - Frxoops                                                      #
@@ -11,7 +12,7 @@
  */
 function b_waiting_xoopstube()
 {
-        /** @var \XoopsMySQLDatabase $xoopsDB */
+    /** @var \XoopsMySQLDatabase $xoopsDB */
     $xoopsDB = \XoopsDatabaseFactory::getDatabaseConnection();
     $ret     = [];
     // xoopstube waiting

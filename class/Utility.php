@@ -2,16 +2,14 @@
 
 namespace XoopsModules\Waiting;
 
+use XoopsModules\Waiting;
+use XoopsModules\Waiting\Common;
+use XoopsModules\Waiting\Constants;
+
 /**
  * Class Utility
  */
-class Utility
+class Utility extends Common\SysUtility
 {
-    use Common\VersionChecks; //checkVerXoops, checkVerPhp Traits
-
-    use Common\ServerStats; // getServerStats Trait
-
-    use Common\FilesManagement; // Files Management Trait
-
     //--------------- Custom module methods -----------------------------
 }

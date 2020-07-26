@@ -1,11 +1,12 @@
 <?php
 // not tested
+
 /**
  * @return array
  */
 function b_waiting_agendax()
 {
-        /** @var \XoopsMySQLDatabase $xoopsDB */
+    /** @var \XoopsMySQLDatabase $xoopsDB */
     $xoopsDB = \XoopsDatabaseFactory::getDatabaseConnection();
     $block   = [];
 

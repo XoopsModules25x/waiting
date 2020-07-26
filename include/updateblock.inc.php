@@ -9,6 +9,7 @@
  WITHOUT ANY WARRANTY; without even the implied warranty of
  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
  */
+
 /**
  * Module: Waiting
  *
@@ -19,13 +20,13 @@
  * @license         {@link http://www.fsf.org/copyleft/gpl.html GNU public license}
  * @link            https://xoops.org XOOPS
  */
-if ((!defined('XOOPS_ROOT_PATH')) || !($GLOBALS['xoopsUser'] instanceof \XoopsUser) || !$GLOBALS['xoopsUser']->IsAdmin()) {
-    exit('Restricted Access - ' . basename($_SERVER['PHP_SELF']) . PHP_EOL);
+if ((!defined('XOOPS_ROOT_PATH')) || !($GLOBALS['xoopsUser'] instanceof \XoopsUser) || !$GLOBALS['xoopsUser']->isAdmin()) {
+    exit('Restricted Access - ' . basename($_SERVER['SCRIPT_NAME']) . PHP_EOL);
 }
 /**
  * Waiting Block installation update
- * @param XoopsModule $module  {@see XoopsModule}
- * @param int         $version currently installed module version
+ * @param \XoopsModule $module  {@see XoopsModule}
+ * @param int          $version currently installed module version
  *
  * @return bool success
  */

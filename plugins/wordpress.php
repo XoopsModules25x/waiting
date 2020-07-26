@@ -1,11 +1,12 @@
 <?php
+
 /**
- * @param  string $wp_num
+ * @param string $wp_num
  * @return array
  */
 function b_waiting_wordpress_0($wp_num = '')
 {
-        /** @var \XoopsMySQLDatabase $xoopsDB */
+    /** @var \XoopsMySQLDatabase $xoopsDB */
     $xoopsDB = \XoopsDatabaseFactory::getDatabaseConnection();
     $block   = [];
 
@@ -22,10 +23,12 @@ function b_waiting_wordpress_0($wp_num = '')
 
 for ($i = 0; $i < 10; ++$i) {
     if (file_exists(XOOPS_ROOT_PATH . "/modules/wordpress{$i}/xoops_version.php")) {
-        eval('
+        eval(
+            '
         function b_waiting_wordpress_' . ($i + 1) . '() {
             return b_waiting_wordpress_0(' . $i . ');
         }
-        ');
+        '
+        );
     }
 }

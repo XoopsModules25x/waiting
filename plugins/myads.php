@@ -1,10 +1,11 @@
 <?php
+
 /**
  * @return array
  */
 function b_waiting_myAds()
 {
-        /** @var \XoopsMySQLDatabase $xoopsDB */
+    /** @var \XoopsMySQLDatabase $xoopsDB */
     $xoopsDB = \XoopsDatabaseFactory::getDatabaseConnection();
     $block   = [];
 
