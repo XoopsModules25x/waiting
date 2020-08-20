@@ -63,7 +63,7 @@ foreach ($mod_objs as $this_obj) {
     $icon        = $this_obj->isactive() ? 'green.gif' : 'red.gif';
     $class       = ('odd' === $class) ? 'even' : 'odd';
     $plugin_info = waiting_get_plugin_info($this_obj->dirname());
-    $plugin_type = isset($plugin_info['type']) ? $plugin_info['type'] : '';
+    $plugin_type = $plugin_info['type'] ?? '';
     echo "  <tr class='{$class}'>"
          . "    <td class='txtcenter width10'><img src='{$pathIcon16}/{$icon}'>"
          . '    <td>'
