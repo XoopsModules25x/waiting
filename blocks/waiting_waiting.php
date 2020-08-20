@@ -61,13 +61,15 @@ function b_waiting_waiting_show($options)
     /** @var \XoopsMySQLDatabase $xoopsDB */
     $xoopsDB = \XoopsDatabaseFactory::getDatabaseConnection();
     /** @var \XoopsModuleHandler $moduleHandler */
-$moduleHandler = xoops_getHandler('module');
+    $moduleHandler = xoops_getHandler('module');
     $block         = [];
 
     // get module's list installed
     $mod_lists = $moduleHandler->getList(new \Criteria(''), true);
+    echo var_dump($mod_lists) . '<br>';
     foreach ($mod_lists as $dirname => $name) {
         $plugin_info = waiting_get_plugin_info($dirname, $userLang);
+        echo var_dump($plugin_info) . '<br>';
         if (empty($plugin_info) || empty($plugin_info['plugin_path'])) {
             continue;
         }
@@ -90,7 +92,8 @@ $moduleHandler = xoops_getHandler('module');
                 // Judging the plugin returns multiple items
                 // if lang_linkname does not exist
                 foreach ($_tmp as $_one) {
-                    if (@$_one['pendingnum'] > 0 || $options[0] > 0) {
+                    if ((int)$_one['pendingnum'] > 0
+                        || (int)$options[0] > 0) {
                         $block['modules'][$dirname]['pending'][] = $_one;
                     }
                 }

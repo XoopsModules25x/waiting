@@ -7,15 +7,18 @@ function b_waiting_news()
 {
     /** @var \XoopsMySQLDatabase $xoopsDB */
     $xoopsDB = \XoopsDatabaseFactory::getDatabaseConnection();
+    $ret     = [];
     $block   = [];
 
     // news
     $result = $xoopsDB->query('SELECT COUNT(*) FROM ' . $xoopsDB->prefix('news_stories') . ' WHERE published=0');
     if ($result) {
         $block['adminlink'] = XOOPS_URL . '/modules/news/admin/index.php?op=newarticle';
-        list($block['pendingnum']) = $xoopsDB->fetchRow($result);
+        [$block['pendingnum']] = $xoopsDB->fetchRow($result);
         $block['lang_linkname'] = _PI_WAITING_SUBMITTED;
     }
 
-    return $block;
+    $ret[] = $block;
+
+    return $ret;
 }
