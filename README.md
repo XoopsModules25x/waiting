@@ -10,7 +10,7 @@
 [![Latest Pre-Release](https://img.shields.io/github/tag/XoopsModules25x/waiting.svg?style=flat)](https://github.com/XoopsModules25x/waiting/tags/)
 [![Latest Version](https://img.shields.io/github/release/XoopsModules25x/waiting.svg?style=flat)](https://github.com/XoopsModules25x/waiting/releases/)
 
-Waiting for [XOOPS CMS](https://xoops.org) offers you an extensible waiting contents block into your XOOPS. 
+Waiting module for [XOOPS CMS](https://xoops.org) offers you an extensible "waiting" contents block into your XOOPS. 
 
 [![Tutorial Available](https://xoops.org/images/tutorial-available-blue.svg)](https://xoops.gitbook.io/waiting-tutorial/) Tutorial: see [here](https://xoops.gitbook.io/waiting-tutorial/).
 To contribute to the Tutorial, [fork it on GitHub](https://github.com/XoopsDocs/waiting-tutorial)
