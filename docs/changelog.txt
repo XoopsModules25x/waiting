@@ -5,7 +5,6 @@
 - cosmetics (mamba)
 WORK IN PROGRESS
 
-
 <h5>1.06 Beta 2  [2016-05-16]</h5>
 <hr>
 - fix missing table row (&lt;tr&gt;) in Admin (./admin/main.php) (zyspec)
