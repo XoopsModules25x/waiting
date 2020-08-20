@@ -18,6 +18,7 @@
  */
 
 use XoopsModules\Waiting;
+use XoopsModules\Waiting\Helper;
 
 //require_once __DIR__ . '/setup.php';
 
@@ -59,7 +60,7 @@ function xoops_module_install_waiting(\XoopsModule $module)
     $moduleDirName = basename(dirname(__DIR__));
 
     /** @var \XoopsModules\Waiting\Helper $helper */
-    $helper       = \XoopsModules\Waiting\Helper::getInstance();
+    $helper       = Helper::getInstance();
     $utility      = new Waiting\Utility();
     $configurator = new Waiting\Common\Configurator();
     // Load language files

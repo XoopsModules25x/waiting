@@ -8,6 +8,8 @@
  * @link            https://xoops.org XOOPS
  */
 
+use XoopsModules\Waiting\Helper;
+
 /**
  * Prepares system prior to attempting to uninstall module
  * @param \XoopsModule $module {@link XoopsModule}
@@ -33,7 +35,7 @@ function xoops_module_uninstall_waiting(\XoopsModule $module)
     $moduleDirName      = basename(dirname(__DIR__));
     $moduleDirNameUpper = mb_strtoupper($moduleDirName);
     /** @var \XoopsModules\Waiting\Helper $helper */
-    $helper = \XoopsModules\Waiting\Helper::getInstance();
+    $helper = Helper::getInstance();
 
     /** @var \XoopsModules\Waiting\Utility $utility */
     $utility = new \XoopsModules\Waiting\Utility();

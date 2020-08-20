@@ -21,15 +21,17 @@
  * @link            https://xoops.org XOOPS
  */
 
+use Xmf\Module\Admin;
 use XoopsModules\Waiting;
+use XoopsModules\Waiting\Helper;
 
 //require_once  dirname(__DIR__) . '/include/common.php';
 /** @var \XoopsModules\Waiting\Helper $helper */
-$helper = \XoopsModules\Waiting\Helper::getInstance();
+$helper = Helper::getInstance();
 $helper->loadLanguage('common');
 $helper->loadLanguage('feedback');
 
-$pathIcon32 = \Xmf\Module\Admin::menuIconPath('');
+$pathIcon32 = Admin::menuIconPath('');
 if (is_object($helper->getModule())) {
     $pathModIcon32 = $helper->getModule()->getInfo('modicons32');
 }

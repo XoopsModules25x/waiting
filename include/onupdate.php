@@ -16,6 +16,11 @@
  * @since
  * @author       XOOPS Development Team
  */
+
+use Xmf\Database\Tables;
+use XoopsModules\Waiting\Common\Configurator;
+use XoopsModules\Waiting\Helper;
+
 if ((!defined('XOOPS_ROOT_PATH')) || !($GLOBALS['xoopsUser'] instanceof \XoopsUser)
     || !$GLOBALS['xoopsUser']->isAdmin()) {
     exit('Restricted access' . PHP_EOL);
@@ -44,7 +49,7 @@ function xoops_module_pre_update_waiting(\XoopsModule $module)
     $moduleDirName = basename(dirname(__DIR__));
     /** @var \XoopsModules\Waiting\Helper $helper */
     /** @var \XoopsModules\Waiting\Utility $utility */
-    $helper  = \XoopsModules\Waiting\Helper::getInstance();
+    $helper  = Helper::getInstance();
     $utility = new \XoopsModules\Waiting\Utility();
 
     $xoopsSuccess = $utility::checkVerXoops($module);
@@ -68,13 +73,13 @@ function xoops_module_update_waiting(\XoopsModule $module, $previousVersion = nu
     /** @var \XoopsModules\Waiting\Helper $helper */ 
     /** @var \XoopsModules\Waiting\Utility $utility */
     /** @var \XoopsModules\Waiting\Common\Configurator $configurator */
-    $helper       = \XoopsModules\Waiting\Helper::getInstance();
+    $helper       = Helper::getInstance();
     $utility      = new \XoopsModules\Waiting\Utility();
-    $configurator = new \XoopsModules\Waiting\Common\Configurator();
+    $configurator = new Configurator();
 
     if ($previousVersion < 240) {
         //rename column EXAMPLE
-        $tables     = new \Xmf\Database\Tables();
+        $tables     = new Tables();
         $table      = 'waitingx_categories';
         $column     = 'ordre';
         $newName    = 'order';

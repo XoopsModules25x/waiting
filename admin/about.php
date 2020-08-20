@@ -20,11 +20,14 @@
  * @license         {@link http://www.fsf.org/copyleft/gpl.html GNU public license}
  * @link            https://xoops.org XOOPS
  */
+
+use Xmf\Module\Admin;
+
 require_once __DIR__ . '/admin_header.php';
 
 xoops_cp_header();
 
-$aboutAdmin = \Xmf\Module\Admin::getInstance();
+$aboutAdmin = Admin::getInstance();
 
 $adminObject->displayNavigation(basename(__FILE__));
 $adminObject->displayAbout('WKFZBRBGMYKCA', false);

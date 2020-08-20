@@ -23,7 +23,9 @@
  * @since           2.00
  */
 
+use Xmf\Request;
 use XoopsModules\Waiting;
+use XoopsModules\Waiting\Helper;
 
 // EXTENSIBLE "waiting block" by plugins in both waiting and modules
 
@@ -51,7 +53,7 @@ function b_waiting_waiting_show($options)
     require_once dirname(__DIR__) . '/include/functions.php';
 
     /** @var \XoopsModules\Waiting\Helper $helper */
-    $helper = \XoopsModules\Waiting\Helper::getInstance();
+    $helper = Helper::getInstance();
     // read language files for plugins
     $helper->loadLanguage('plugins');
 
@@ -79,7 +81,7 @@ $moduleHandler = xoops_getHandler('module');
         if (function_exists(@$plugin_info['func'])) {
             // get the list of waitings
             $_tmp = call_user_func($plugin_info['func'], $dirname);
-            if (\Xmf\Request::hasVar('lang_linkname', 'tmp')) {
+            if (Request::hasVar('lang_linkname', 'tmp')) {
                 if (@$_tmp['pendingnum'] > 0 || $options[0] > 0) {
                     $block['modules'][$dirname]['pending'][] = $_tmp;
                 }
