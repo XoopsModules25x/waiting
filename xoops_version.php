@@ -29,7 +29,7 @@ $moduleDirName                     = basename(__DIR__);
 
 $modversion['version']             = 1.07;
 $modversion['module_status']       = 'RC1';
-$modversion['release_date']        = '2020/07/26';
+$modversion['release_date']        = '2020/08/20';
 $modversion['name']                = _MI_WAITING_NAME;
 $modversion['description']         = _MI_WAITING_DESC;
 $modversion['author']              = 'Ryuji (http://ryus.co.jp/)';
