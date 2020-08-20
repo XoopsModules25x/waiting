@@ -35,7 +35,7 @@ define('_MI_WAITING_MENU_PLUGINS', 'Plugins');
 // Help defines
 //define('_MI_WAITING_NAME', "Waiting");
 define('_MI_WAITING_HEADER', 'Help:');
-define('_MI_WAITING_DIRNAME', basename(dirname(dirname(__DIR__))));
+define('_MI_WAITING_DIRNAME', basename(dirname(__DIR__, 2)));
 define('_MI_WAITING_BACK_2_ADMIN', 'Back to Administration of ');
 
 //1.06
