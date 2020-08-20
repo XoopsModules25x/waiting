@@ -37,7 +37,6 @@ function xoops_module_uninstall_waiting(\XoopsModule $module)
     /** @var \XoopsModules\Waiting\Helper $helper */
     $helper = Helper::getInstance();
 
-    /** @var \XoopsModules\Waiting\Utility $utility */
     $utility = new \XoopsModules\Waiting\Utility();
 
     $success = true;
