@@ -59,7 +59,7 @@ function b_waiting_waiting_show($options)
     /** @var \XoopsMySQLDatabase $xoopsDB */
     $xoopsDB = \XoopsDatabaseFactory::getDatabaseConnection();
     /** @var \XoopsModuleHandler $moduleHandler */
-    $moduleHandler = xoops_getHandler('module');
+$moduleHandler = xoops_getHandler('module');
     $block         = [];
 
     // get module's list installed

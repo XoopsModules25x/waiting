@@ -36,7 +36,8 @@ function xoops_module_update_waiting($module, $version)
     // Keep Block option values when update (by nobunobu)
     $mid = $module->mid();
     if ($mid) {
-        $configHandler       = xoops_getHandler('config');
+        /** @var \XoopsConfigHandler $configHandler */
+$configHandler = xoops_getHandler('config');
         $waitingModuleConfig = $configHandler->getConfigsByCat(0, $mid);
 
         $count = count($waitingModuleConfig['blocks']);
