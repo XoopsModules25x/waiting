@@ -37,7 +37,7 @@ function xoops_module_update_waiting($module, $version)
     $mid = $module->mid();
     if ($mid) {
         /** @var \XoopsConfigHandler $configHandler */
-$configHandler = xoops_getHandler('config');
+        $configHandler       = xoops_getHandler('config');
         $waitingModuleConfig = $configHandler->getConfigsByCat(0, $mid);
 
         $count = count($waitingModuleConfig['blocks']);

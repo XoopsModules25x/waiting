@@ -49,7 +49,7 @@ $modversion['min_php']             = '7.1';
 $modversion['min_xoops']           = '2.5.10';
 $modversion['min_admin']           = '1.2';
 $modversion['min_db']              = ['mysql' => '5.5'];
-
+$modversion['hasMain']             = 0;
 // Admin things
 $modversion['hasAdmin']    = 1;
 $modversion['system_menu'] = 1;
