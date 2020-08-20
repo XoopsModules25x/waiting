@@ -3,7 +3,7 @@
  ------------------------------------------------------------------------
  XOOPS - PHP Content Management System
  Copyright (c) 2000 XOOPS.org
- <http://www.xoops.org/>
+ <https://xoops.org>
  ------------------------------------------------------------------------
  This program is free software; you can redistribute it and/or modify
  it under the terms of the GNU General Public License as published by
@@ -25,28 +25,31 @@
  Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307 USA
  ------------------------------------------------------------------------
  */
+
 /**
  * Module: Waiting
  *
+ * @param mixed $dirname
+ * @param mixed $language
+ * @author          XOOPS Module Development Team
+ * @copyright       {@link https://xoops.org 2001-2016 XOOPS Project}
+ * @license         {@link http://www.fsf.org/copyleft/gpl.html GNU public license}
+ * @link            https://xoops.org XOOPS
  * @category        Module
  * @package         waiting
- * @author          XOOPS Module Development Team
- * @copyright       {@link http://xoops.org 2001-2016 XOOPS Project}
- * @license         {@link http://www.fsf.org/copyleft/gpl.html GNU public license}
- * @link            http://xoops.org XOOPS
  */
 
 /**
  * @param         $dirname
- * @param  string $language
+ * @param string  $language
  * @return array
  */
 function waiting_get_plugin_info($dirname, $language = 'english')
 {
     // get $mytrustdirname for D3 modules
     $mytrustdirname = '';
-    if (defined('XOOPS_TRUST_PATH') && file_exists(XOOPS_ROOT_PATH . '/modules/' . $dirname . '/mytrustdirname.php')) {
-        @include XOOPS_ROOT_PATH . '/modules/' . $dirname . '/mytrustdirname.php';
+    if (defined('XOOPS_TRUST_PATH') && is_file(XOOPS_ROOT_PATH . '/modules/' . $dirname . '/mytrustdirname.php')) {
+        @require XOOPS_ROOT_PATH . '/modules/' . $dirname . '/mytrustdirname.php';
     }
 
     $module_plugin_file   = XOOPS_ROOT_PATH . '/modules/' . $dirname . '/include/waiting.plugin.php';
@@ -55,10 +58,10 @@ function waiting_get_plugin_info($dirname, $language = 'english')
 
     if (file_exists($module_plugin_file)) {
         // module side (1st priority)
-        $lang_files    = array(
+        $lang_files    = [
             XOOPS_ROOT_PATH . "/modules/$dirname/language/$language/waiting.php",
-            XOOPS_ROOT_PATH . "/modules/$dirname/language/english/waiting.php"
-        );
+            XOOPS_ROOT_PATH . "/modules/$dirname/language/english/waiting.php",
+        ];
         $langfile_path = '';
         foreach ($lang_files as $lang_file) {
             if (file_exists($lang_file)) {
@@ -66,18 +69,18 @@ function waiting_get_plugin_info($dirname, $language = 'english')
                 break;
             }
         }
-        $ret = array(
+        $ret = [
             'plugin_path'   => $module_plugin_file,
             'langfile_path' => $langfile_path,
             'func'          => 'b_waiting_' . $dirname,
-            'type'          => 'module'
-        );
+            'type'          => 'module',
+        ];
     } elseif (!empty($mytrustdirname) && file_exists($d3module_plugin_file)) {
         // D3 module's plugin under xoops_trust_path (2nd priority)
-        $lang_files    = array(
+        $lang_files    = [
             XOOPS_TRUST_PATH . "/modules/$mytrustdirname/language/$language/waiting.php",
-            XOOPS_TRUST_PATH . "/modules/$mytrustdirname/language/english/waiting.php"
-        );
+            XOOPS_TRUST_PATH . "/modules/$mytrustdirname/language/english/waiting.php",
+        ];
         $langfile_path = '';
         foreach ($lang_files as $lang_file) {
             if (file_exists($lang_file)) {
@@ -85,22 +88,22 @@ function waiting_get_plugin_info($dirname, $language = 'english')
                 break;
             }
         }
-        $ret = array(
+        $ret = [
             'plugin_path'   => $d3module_plugin_file,
             'langfile_path' => $langfile_path,
             'func'          => 'b_waiting_' . $mytrustdirname,
-            'type'          => 'module (D3)'
-        );
+            'type'          => 'module (D3)',
+        ];
     } elseif (file_exists($builtin_plugin_file)) {
         // built-in plugin under modules/waiting (3rd priority)
-        $ret = array(
+        $ret = [
             'plugin_path'   => $builtin_plugin_file,
             'langfile_path' => '',
             'func'          => 'b_waiting_' . $dirname,
-            'type'          => 'Waiting'
-        );
+            'type'          => 'Waiting',
+        ];
     } else {
-        $ret = array();
+        $ret = [];
     }
 
     return $ret;

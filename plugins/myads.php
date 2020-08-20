@@ -1,11 +1,13 @@
 <?php
+
 /**
  * @return array
  */
 function b_waiting_myAds()
 {
-    $xoopsDB = XoopsDatabaseFactory::getDatabaseConnection();
-    $block   = array();
+    /** @var \XoopsMySQLDatabase $xoopsDB */
+    $xoopsDB = \XoopsDatabaseFactory::getDatabaseConnection();
+    $block   = [];
 
     $result = $xoopsDB->query('SELECT COUNT(*) FROM ' . $xoopsDB->prefix('ann_annonces') . " WHERE valid='No'");
     if ($result) {

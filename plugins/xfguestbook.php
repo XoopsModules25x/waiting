@@ -1,11 +1,13 @@
 <?php
+
 /**
  * @return array
  */
 function b_waiting_xfguestbook()
 {
-    $xoopsDB = XoopsDatabaseFactory::getDatabaseConnection();
-    $block   = array();
+    /** @var \XoopsMySQLDatabase $xoopsDB */
+    $xoopsDB = \XoopsDatabaseFactory::getDatabaseConnection();
+    $block   = [];
 
     $result = $xoopsDB->query('SELECT count(*) FROM ' . $xoopsDB->prefix('xfguestbook_msg') . ' WHERE moderate = 1');
     if ($result) {

@@ -1,13 +1,13 @@
 <?php
 
-include_once XOOPS_ROOT_PATH . '/modules/simpleblog/simpleblog.php';
+require_once XOOPS_ROOT_PATH . '/modules/simpleblog/simpleblog.php';
 
 /**
  * @return array
  */
 function b_waiting_simpleblog()
 {
-    $result                  = array();
+    $result                  = [];
     $result['adminlink']     = XOOPS_URL . '/modules/simpleblog/admin/index.php';
     $result['pendingnum']    = SimpleBlog::getApplicationNum();
     $result['lang_linkname'] = _PI_WAITING_BLOGS;

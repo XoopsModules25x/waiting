@@ -1,5 +1,6 @@
 <?php
 /*************************************************************************/
+
 # Waiting Contents Extensible                                            #
 # Plugin for module publisher                                            #
 #                                                                        #
@@ -14,11 +15,12 @@
  */
 function b_waiting_publisher()
 {
-    $xoopsDB = XoopsDatabaseFactory::getDatabaseConnection();
-    $ret     = array();
+    /** @var \XoopsMySQLDatabase $xoopsDB */
+    $xoopsDB = \XoopsDatabaseFactory::getDatabaseConnection();
+    $ret     = [];
 
     // publisher submitted
-    $block  = array();
+    $block  = [];
     $result = $xoopsDB->query('SELECT COUNT(*) FROM ' . $xoopsDB->prefix('publisher_items') . ' WHERE status=1');
     if ($result) {
         $block['adminlink'] = XOOPS_URL . '/modules/publisher/admin/item.php';

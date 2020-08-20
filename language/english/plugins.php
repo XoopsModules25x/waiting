@@ -9,6 +9,7 @@
  WITHOUT ANY WARRANTY; without even the implied warranty of
  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
  */
+
 /**
  * Module: Waiting
  *
@@ -16,12 +17,11 @@
  * @package         waiting
  * @author          Ryuji AMANO <info@ryus.co.jp>
  * @author          XOOPS Module Development Team
- * @copyright       {@link http://xoops.org 2001-2016 XOOPS Project}
+ * @copyright       {@link https://xoops.org 2001-2016 XOOPS Project}
  * @license         {@link http://www.fsf.org/copyleft/gpl.html GNU public license}
  * @link            http://ryus.co.jp Ryu's Planning
- * @link            http://xoops.org XOOPS
+ * @link            https://xoops.org XOOPS
  */
-
 define('_PI_WAITING_WAITINGS', 'Waitings');
 define('_PI_WAITING_SUBMITTED', 'Submitted');
 define('_PI_WAITING_INACTIVE_USERS', 'Inactive Users');

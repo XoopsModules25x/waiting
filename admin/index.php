@@ -9,6 +9,7 @@
  WITHOUT ANY WARRANTY; without even the implied warranty of
  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
  */
+
 /**
  * Module: Waiting
  *
@@ -16,20 +17,21 @@
  * @package         waiting
  * @author          Ryuji AMANO <info@ryus.co.jp>
  * @author          XOOPS Module Development Team
- * @copyright       {@link http://xoops.org 2001-2016 XOOPS Project}
+ * @copyright       {@link https://xoops.org 2001-2016 XOOPS Project}
  * @license         {@link http://www.fsf.org/copyleft/gpl.html GNU public license}
  * @link            http://ryus.co.jp Ryu's Planning
- * @link            http://xoops.org XOOPS
+ * @link            https://xoops.org XOOPS
  */
 
-require_once dirname(dirname(dirname(__DIR__))) . '/include/cp_header.php';
-include_once __DIR__ . '/admin_header.php';
+use Xmf\Module\Admin;
+
+require_once __DIR__ . '/admin_header.php';
 
 xoops_cp_header();
 
-$indexAdmin = new ModuleAdmin();
+$adminObject = Admin::getInstance();
 
-echo $indexAdmin->addNavigation(basename(__FILE__));
-echo $indexAdmin->renderIndex();
+$adminObject->displayNavigation(basename(__FILE__));
+$adminObject->displayIndex();
 
-include __DIR__ . '/admin_footer.php';
+require_once __DIR__ . '/admin_footer.php';

@@ -1,5 +1,6 @@
 <?php
 /*************************************************************************/
+
 # Waiting Contents Extensible                                            #
 # Plugin for module adslight                                             #
 #                                                                        #
@@ -13,8 +14,9 @@
  */
 function b_waiting_adslight()
 {
-    $xoopsDB = XoopsDatabaseFactory::getDatabaseConnection();
-    $block   = array();
+    /** @var \XoopsMySQLDatabase $xoopsDB */
+    $xoopsDB = \XoopsDatabaseFactory::getDatabaseConnection();
+    $block   = [];
     $result  = $xoopsDB->query('SELECT COUNT(*) FROM ' . $xoopsDB->prefix('adslight_listing') . " WHERE valid='No'");
     if ($result) {
         $block['adminlink'] = XOOPS_URL . '/modules/adslight/admin/validate_ads.php';

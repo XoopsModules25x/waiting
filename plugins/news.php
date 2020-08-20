@@ -1,11 +1,13 @@
 <?php
+
 /**
  * @return array
  */
 function b_waiting_news()
 {
-    $xoopsDB = XoopsDatabaseFactory::getDatabaseConnection();
-    $block   = array();
+    /** @var \XoopsMySQLDatabase $xoopsDB */
+    $xoopsDB = \XoopsDatabaseFactory::getDatabaseConnection();
+    $block   = [];
 
     // news
     $result = $xoopsDB->query('SELECT COUNT(*) FROM ' . $xoopsDB->prefix('news_stories') . ' WHERE published=0');

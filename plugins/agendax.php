@@ -1,12 +1,14 @@
 <?php
 // not tested
+
 /**
  * @return array
  */
 function b_waiting_agendax()
 {
-    $xoopsDB = XoopsDatabaseFactory::getDatabaseConnection();
-    $block   = array();
+    /** @var \XoopsMySQLDatabase $xoopsDB */
+    $xoopsDB = \XoopsDatabaseFactory::getDatabaseConnection();
+    $block   = [];
 
     // agenda-x events
     $result = $xoopsDB->query('SELECT COUNT(*) FROM ' . $xoopsDB->prefix('agendax_events') . ' WHERE approved=0');

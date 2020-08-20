@@ -9,6 +9,7 @@
  WITHOUT ANY WARRANTY; without even the implied warranty of
  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
  */
+
 /**
  * Module: Waiting
  *
@@ -16,17 +17,15 @@
  * @package         waiting
  * @author          Ryuji AMANO <info@ryus.co.jp>
  * @author          XOOPS Module Development Team
- * @copyright       {@link http://xoops.org 2001-2016 XOOPS Project}
+ * @copyright       {@link https://xoops.org 2001-2016 XOOPS Project}
  * @license         {@link http://www.fsf.org/copyleft/gpl.html GNU public license}
  * @link            http://ryus.co.jp Ryu's Planning
- * @link            http://xoops.org XOOPS
+ * @link            https://xoops.org XOOPS
  */
 
-echo "<div class='adminfooter'>\n" .
-     "  <div style='text-align: center;'>\n" .
-     "    <a href='http://www.xoops.org' rel='external'><img src='{$pathIcon32}/xoopsmicrobutton.gif' alt='XOOPS' title='XOOPS'></a>\n" .
-     "  </div>\n" . '  ' .
-     _AM_WAITING_FOOTER .
-     "\n" . '</div>';
+use Xmf\Module\Admin;
+
+$pathIcon32 = Admin::iconUrl('', 32);
+echo "<div class='adminfooter'>\n" . "  <div style='text-align: center;'>\n" . "    <a href='https://xoops.org' rel='external'><img src='{$pathIcon32}/xoopsmicrobutton.gif' alt='XOOPS' title='XOOPS'></a>\n" . "  </div>\n" . '  ' . _AM_WAITING_FOOTER . "\n" . '</div>';
 
 xoops_cp_footer();

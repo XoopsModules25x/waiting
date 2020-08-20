@@ -8,6 +8,7 @@
  but WITHOUT ANY WARRANTY; without even the implied warranty of
  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
 */
+
 /**
  * Module: Waiting
  *
@@ -15,36 +16,42 @@
  * @package         waiting
  * @subpackage      administration
  * @author          XOOPS Module Development Team
- * @copyright       {@link http://xoops.org 2001-2016 XOOPS Project}
+ * @copyright       {@link https://xoops.org 2001-2016 XOOPS Project}
  * @license         {@link http://www.fsf.org/copyleft/gpl.html GNU public license}
- * @link            http://xoops.org XOOPS
+ * @link            https://xoops.org XOOPS
  */
 
-defined('XOOPS_ROOT_PATH') || exit('Restricted access');
+use Xmf\Module\Admin;
+use XoopsModules\Waiting;
+use XoopsModules\Waiting\Helper;
 
-$moduleDirName = basename(dirname(__DIR__));
-$moduleHandler = xoops_getHandler('module');
-$module        = $moduleHandler->getByDirname($moduleDirName);
-$pathIcon32    = $module->getInfo('icons32');
+//require_once  dirname(__DIR__) . '/include/common.php';
+/** @var \XoopsModules\Waiting\Helper $helper */
+$helper = Helper::getInstance();
+$helper->loadLanguage('common');
+$helper->loadLanguage('feedback');
 
-//xoops_loadLanguage('admin', $dirname);
+$pathIcon32 = Admin::menuIconPath('');
+if (is_object($helper->getModule())) {
+    $pathModIcon32 = $helper->getModule()->getInfo('modicons32');
+}
 
-$adminmenu = array(
-    array(
+$adminmenu = [
+    [
         'title' => _MI_WAITING_MENU_HOME,
         'link'  => 'admin/index.php',
-        'icon'  => "{$pathIcon32}/home.png"
-    ),
+        'icon'  => "{$pathIcon32}/home.png",
+    ],
 
-    array(
+    [
         'title' => _MI_WAITING_MENU_PLUGINS,
         'link'  => 'admin/main.php',
-        'icon'  => "{$pathIcon32}/search.png"
-    ),
+        'icon'  => "{$pathIcon32}/search.png",
+    ],
 
-    array(
+    [
         'title' => _MI_WAITING_MENU_ABOUT,
         'link'  => 'admin/about.php',
-        'icon'  => "{$pathIcon32}/about.png"
-    )
-);
+        'icon'  => "{$pathIcon32}/about.png",
+    ],
+];

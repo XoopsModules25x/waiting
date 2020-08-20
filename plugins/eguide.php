@@ -1,11 +1,13 @@
 <?php
+
 /**
  * @return array
  */
 function b_waiting_eguide()
 {
-    $xoopsDB = XoopsDatabaseFactory::getDatabaseConnection();
-    $block   = array();
+    /** @var \XoopsMySQLDatabase $xoopsDB */
+    $xoopsDB = \XoopsDatabaseFactory::getDatabaseConnection();
+    $block   = [];
 
     // eguide
     $result = $xoopsDB->query('SELECT COUNT(*) FROM ' . $xoopsDB->prefix('eguide') . ' WHERE status=1');

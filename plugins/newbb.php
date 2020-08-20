@@ -1,16 +1,18 @@
 <?php
+
 /**
  * @return array
  */
 function b_waiting_newbb()
 {
-    $xoopsDB = XoopsDatabaseFactory::getDatabaseConnection();
-    $block   = array();
+    /** @var \XoopsMySQLDatabase $xoopsDB */
+    $xoopsDB = \XoopsDatabaseFactory::getDatabaseConnection();
+    $block   = [];
 
     // judge the version of newbb/
     if (!file_exists(XOOPS_ROOT_PATH . '/modules/newbb/polls.php')) {
         // newbb1
-        return array();
+        return [];
     }
 
     // works with newbb2 or CBB 1.14

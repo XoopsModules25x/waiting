@@ -1,11 +1,13 @@
 <?php
+
 /**
  * @return array
  */
 function b_waiting_recette()
 {
-    $xoopsDB = XoopsDatabaseFactory::getDatabaseConnection();
-    $block   = array();
+    /** @var \XoopsMySQLDatabase $xoopsDB */
+    $xoopsDB = \XoopsDatabaseFactory::getDatabaseConnection();
+    $block   = [];
 
     // news
     $result = $xoopsDB->query('SELECT COUNT(*) FROM ' . $xoopsDB->prefix('recette') . ' WHERE published=0');

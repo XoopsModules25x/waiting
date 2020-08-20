@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @return array
  */
@@ -7,9 +8,9 @@ function b_waiting_yomi()
     $log_path      = XOOPS_ROOT_PATH . '/modules/yomi/log/';
     $log_file      = 'ys4_temp.cgi';
     $lang_linkname = 'Yomi';
-    $block         = array();
+    $block         = [];
     $cTemp         = 0;
-    $fp            = fopen("{$log_path}{$log_file}", 'r');
+    $fp            = fopen("{$log_path}{$log_file}", 'rb');
 
     while ($tmp = fgets($fp, 4096)) {
         ++$cTemp;
@@ -17,11 +18,11 @@ function b_waiting_yomi()
     fclose($fp);
 
     if (0 !== $cTemp) {
-        $block = array(
+        $block = [
             'adminlink'     => XOOPS_URL . '/modules/yomi/admin.php',
             'pendingnum'    => $cTemp,
-            'lang_linkname' => _PI_WAITING_WAITINGS
-        );
+            'lang_linkname' => _PI_WAITING_WAITINGS,
+        ];
     }
 
     return $block;

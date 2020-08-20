@@ -1,5 +1,6 @@
 <?php
 /*************************************************************************/
+
 # Waiting Contents Extensible                                            #
 # Plugin for module PDdownloads                                          #
 #                                                                        #
@@ -13,11 +14,12 @@
  */
 function b_waiting_PDdownloads()
 {
-    $xoopsDB = XoopsDatabaseFactory::getDatabaseConnection();
-    $ret     = array();
+    /** @var \XoopsMySQLDatabase $xoopsDB */
+    $xoopsDB = \XoopsDatabaseFactory::getDatabaseConnection();
+    $ret     = [];
 
     // PDdownloads waiting
-    $block  = array();
+    $block  = [];
     $result = $xoopsDB->query('SELECT COUNT(*) FROM ' . $xoopsDB->prefix('PDdownloads_downloads') . ' WHERE status=0');
     if ($result) {
         $block['adminlink'] = XOOPS_URL . '/modules/PDdownloads/admin/newdownloads.php';
@@ -27,7 +29,7 @@ function b_waiting_PDdownloads()
     $ret[] = $block;
 
     // PDdownloads broken
-    $block  = array();
+    $block  = [];
     $result = $xoopsDB->query('SELECT COUNT(*) FROM ' . $xoopsDB->prefix('PDdownloads_broken'));
     if ($result) {
         $block['adminlink'] = XOOPS_URL . '/modules/PDdownloads/admin/brokendown.php';
@@ -37,7 +39,7 @@ function b_waiting_PDdownloads()
     $ret[] = $block;
 
     // PDdownloads modreq
-    $block  = array();
+    $block  = [];
     $result = $xoopsDB->query('SELECT COUNT(*) FROM ' . $xoopsDB->prefix('PDdownloads_mod'));
     if ($result) {
         $block['adminlink'] = XOOPS_URL . '/modules/PDdownloads/admin/modifications.php';

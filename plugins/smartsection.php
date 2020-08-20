@@ -1,5 +1,6 @@
 <?php
 /*************************************************************************/
+
 # Waiting Contents Extensible                                            #
 # Plugin for module smartsection                                         #
 #                                                                        #
@@ -13,11 +14,12 @@
  */
 function b_waiting_smartsection()
 {
-    $xoopsDB = XoopsDatabaseFactory::getDatabaseConnection();
-    $ret     = array();
+    /** @var \XoopsMySQLDatabase $xoopsDB */
+    $xoopsDB = \XoopsDatabaseFactory::getDatabaseConnection();
+    $ret     = [];
 
     // smartsection submitted
-    $block  = array();
+    $block  = [];
     $result = $xoopsDB->query('SELECT COUNT(*) FROM ' . $xoopsDB->prefix('smartsection_items') . ' WHERE status=1');
     if ($result) {
         $block['adminlink'] = XOOPS_URL . '/modules/smartsection/admin/index.php?statussel=1';

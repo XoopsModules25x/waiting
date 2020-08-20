@@ -9,24 +9,27 @@
  WITHOUT ANY WARRANTY; without even the implied warranty of
  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
  */
+
 /**
  * Module: Waiting
  *
  * @category        Module
  * @package         waiting
  * @author          XOOPS Module Development Team
- * @copyright       {@link http://xoops.org 2001-2016 XOOPS Project}
+ * @copyright       {@link https://xoops.org 2001-2016 XOOPS Project}
  * @license         {@link http://www.fsf.org/copyleft/gpl.html GNU public license}
- * @link            http://xoops.org XOOPS
+ * @link            https://xoops.org XOOPS
  */
 
-include_once __DIR__ . '/admin_header.php';
+use Xmf\Module\Admin;
+
+require_once __DIR__ . '/admin_header.php';
 
 xoops_cp_header();
 
-$aboutAdmin = new ModuleAdmin();
+$aboutAdmin = Admin::getInstance();
 
-echo $aboutAdmin->addNavigation(basename(__FILE__));
-echo $aboutAdmin->renderAbout('WKFZBRBGMYKCA', false);
+$adminObject->displayNavigation(basename(__FILE__));
+$adminObject->displayAbout('WKFZBRBGMYKCA', false);
 
-include_once __DIR__ . '/admin_footer.php';
+require_once __DIR__ . '/admin_footer.php';

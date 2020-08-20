@@ -1,14 +1,15 @@
 <?php
+
 /**
  * SmartPartner plugin
  *
  * @author Marius Scurtescu <mariuss@romanians.bc.ca>
- *
  */
 function b_waiting_smartpartner()
 {
-    $xoopsDB = XoopsDatabaseFactory::getDatabaseConnection();
-    $block   = array();
+    /** @var \XoopsMySQLDatabase $xoopsDB */
+    $xoopsDB = \XoopsDatabaseFactory::getDatabaseConnection();
+    $block   = [];
 
     // smartpartner submitted
     $result = $xoopsDB->query('SELECT COUNT(*) FROM ' . $xoopsDB->prefix('smartpartner_partner') . ' WHERE status=1');

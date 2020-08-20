@@ -1,5 +1,6 @@
 <?php
 /*************************************************************************/
+
 # Waiting Contents Extensible                                            #
 # Plugin for module PDlinks                                              #
 #                                                                        #
@@ -13,11 +14,12 @@
  */
 function b_waiting_PDlinks()
 {
-    $xoopsDB = XoopsDatabaseFactory::getDatabaseConnection();
-    $ret     = array();
+    /** @var \XoopsMySQLDatabase $xoopsDB */
+    $xoopsDB = \XoopsDatabaseFactory::getDatabaseConnection();
+    $ret     = [];
 
     // PDlinks waiting
-    $block  = array();
+    $block  = [];
     $result = $xoopsDB->query('SELECT COUNT(*) FROM ' . $xoopsDB->prefix('PDlinks_links') . ' WHERE status=0');
     if ($result) {
         $block['adminlink'] = XOOPS_URL . '/modules/PDlinks/admin/newlinks.php';
@@ -27,7 +29,7 @@ function b_waiting_PDlinks()
     $ret[] = $block;
 
     // PDlinks broken
-    $block  = array();
+    $block  = [];
     $result = $xoopsDB->query('SELECT COUNT(*) FROM ' . $xoopsDB->prefix('PDlinks_broken'));
     if ($result) {
         $block['adminlink'] = XOOPS_URL . '/modules/PDlinks/admin/brokenlink.php';
@@ -37,7 +39,7 @@ function b_waiting_PDlinks()
     $ret[] = $block;
 
     // PDlinks modreq
-    $block  = array();
+    $block  = [];
     $result = $xoopsDB->query('SELECT COUNT(*) FROM ' . $xoopsDB->prefix('PDlinks_mod'));
     if ($result) {
         $block['adminlink'] = XOOPS_URL . '/modules/PDlinks/admin/index.php?op=listModReq';

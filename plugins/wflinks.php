@@ -1,5 +1,6 @@
 <?php
 /*************************************************************************/
+
 # Waiting Contents Extensible                                            #
 # Plugin for module WF-Links                                             #
 #                                                                        #
@@ -13,11 +14,12 @@
  */
 function b_waiting_wflinks()
 {
-    $xoopsDB = XoopsDatabaseFactory::getDatabaseConnection();
-    $ret     = array();
+    /** @var \XoopsMySQLDatabase $xoopsDB */
+    $xoopsDB = \XoopsDatabaseFactory::getDatabaseConnection();
+    $ret     = [];
 
     // wflinks waiting
-    $block  = array();
+    $block  = [];
     $result = $xoopsDB->query('SELECT COUNT(*) FROM ' . $xoopsDB->prefix('wflinks_links') . ' WHERE status=0');
     if ($result) {
         $block['adminlink'] = XOOPS_URL . '/modules/wflinks/admin/newlinks.php';
@@ -27,7 +29,7 @@ function b_waiting_wflinks()
     $ret[] = $block;
 
     // wflinks broken
-    $block  = array();
+    $block  = [];
     $result = $xoopsDB->query('SELECT COUNT(*) FROM ' . $xoopsDB->prefix('wflinks_broken'));
     if ($result) {
         $block['adminlink'] = XOOPS_URL . '/modules/wflinks/admin/brokenlink.php';
@@ -37,7 +39,7 @@ function b_waiting_wflinks()
     $ret[] = $block;
 
     // wflinks modreq
-    $block  = array();
+    $block  = [];
     $result = $xoopsDB->query('SELECT COUNT(*) FROM ' . $xoopsDB->prefix('wflinks_mod'));
     if ($result) {
         $block['adminlink'] = XOOPS_URL . '/modules/wflinks/admin/modifications.php';

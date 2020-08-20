@@ -1,5 +1,6 @@
 <?php
 /*************************************************************************/
+
 # Waiting Contents Extensible                                            #
 # Plugin for module PDdownloads                                          #
 #                                                                        #
@@ -13,11 +14,12 @@
  */
 function b_waiting_xyp4all()
 {
-    $xoopsDB = XoopsDatabaseFactory::getDatabaseConnection();
-    $ret     = array();
+    /** @var \XoopsMySQLDatabase $xoopsDB */
+    $xoopsDB = \XoopsDatabaseFactory::getDatabaseConnection();
+    $ret     = [];
 
     // xyp4all links
-    $block  = array();
+    $block  = [];
     $result = $xoopsDB->query('SELECT COUNT(*) FROM ' . $xoopsDB->prefix('xyp_links') . ' WHERE status=0');
     if ($result) {
         $block['adminlink'] = XOOPS_URL . '/modules/xyp4all/admin/index.php?op=listNewLinks';
@@ -27,7 +29,7 @@ function b_waiting_xyp4all()
     $ret[] = $block;
 
     // xyp4all broken
-    $block  = array();
+    $block  = [];
     $result = $xoopsDB->query('SELECT COUNT(*) FROM ' . $xoopsDB->prefix('xyp_broken'));
     if ($result) {
         $block['adminlink'] = XOOPS_URL . '/modules/xyp4all/admin/index.php?op=listBrokenLinks';
@@ -37,7 +39,7 @@ function b_waiting_xyp4all()
     $ret[] = $block;
 
     // xyp4all modreq
-    $block  = array();
+    $block  = [];
     $result = $xoopsDB->query('SELECT COUNT(*) FROM ' . $xoopsDB->prefix('xyp_mod'));
     if ($result) {
         $block['adminlink'] = XOOPS_URL . '/modules/xyp4all/admin/index.php?op=listModReq';

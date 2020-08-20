@@ -9,6 +9,7 @@
  WITHOUT ANY WARRANTY; without even the implied warranty of
  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
  */
+
 /**
  * Module: Waiting
  *
@@ -16,28 +17,36 @@
  * @package         waiting
  * @author          Ryuji AMANO <info@ryus.co.jp>
  * @author          XOOPS Module Development Team
- * @copyright       {@link http://xoops.org 2001-2016 XOOPS Project}
+ * @copyright       {@link https://xoops.org 2001-2016 XOOPS Project}
  * @license         {@link http://www.fsf.org/copyleft/gpl.html GNU public license}
  * @link            http://ryus.co.jp Ryu's Planning
- * @link            http://xoops.org XOOPS
+ * @link            https://xoops.org XOOPS
  */
 
-$path = dirname(dirname(dirname(__DIR__)));
-include_once $path . '/mainfile.php';
-include_once $path . '/include/cp_functions.php';
-require_once $path . '/include/cp_header.php';
+use Xmf\Module\Admin;
+use XoopsModules\Waiting;
+use XoopsModules\Waiting\Helper;
 
-global $xoopsModule;
+require_once dirname(__DIR__, 3) . '/include/cp_header.php';
+require  dirname(__DIR__) . '/preloads/autoloader.php';
 
-$moduleDirName = $GLOBALS['xoopsModule']->getVar('dirname');
+$moduleDirName = basename(dirname(__DIR__));
+/** @var \XoopsModules\Waiting\Helper $helper */
+$helper      = Helper::getInstance();
+$adminObject = Admin::getInstance();
+
+$pathIcon16    = Admin::iconUrl('', 16);
+$pathIcon32    = Admin::iconUrl('', 32);
+$pathModIcon32 = $helper->getModule()->getInfo('modicons32');
 
 // Load language files
-xoops_loadLanguage('admin', $moduleDirName);
-xoops_loadLanguage('modinfo', $moduleDirName);
-xoops_loadLanguage('main', $moduleDirName);
+$helper->loadLanguage('admin');
+$helper->loadLanguage('modinfo');
+$helper->loadLanguage('main');
 
-$pathIcon16      = '../' . $xoopsModule->getInfo('icons16');
-$pathIcon32      = '../' . $xoopsModule->getInfo('icons32');
-$pathModuleAdmin = $xoopsModule->getInfo('dirmoduleadmin');
+$myts = \MyTextSanitizer::getInstance();
 
-require_once $GLOBALS['xoops']->path($pathModuleAdmin . '/moduleadmin.php');
+if (!isset($GLOBALS['xoopsTpl']) || !($GLOBALS['xoopsTpl'] instanceof \XoopsTpl)) {
+    require_once $GLOBALS['xoops']->path('class/template.php');
+    $xoopsTpl = new \XoopsTpl();
+}

@@ -1,14 +1,16 @@
 <?php
+
 /**
  * @return array
  */
 function b_waiting_system()
 {
-    $xoopsDB = XoopsDatabaseFactory::getDatabaseConnection();
-    $ret     = array();
+    /** @var \XoopsMySQLDatabase $xoopsDB */
+    $xoopsDB = \XoopsDatabaseFactory::getDatabaseConnection();
+    $ret     = [];
 
     // comments
-    $block  = array();
+    $block  = [];
     $result = $xoopsDB->query('SELECT COUNT(*) FROM ' . $xoopsDB->prefix('xoopscomments') . ' WHERE com_status=1');
     if ($result) {
         $block['adminlink'] = XOOPS_URL . '/modules/system/admin.php?module=0&status=1&fct=comments';
@@ -18,7 +20,7 @@ function b_waiting_system()
     $ret[] = $block;
 
     // Inactive Users
-    $block  = array();
+    $block  = [];
     $result = $xoopsDB->query('SELECT COUNT(*) FROM ' . $xoopsDB->prefix('users') . ' WHERE level=0');
     if ($result) {
         $block['adminlink'] = XOOPS_URL . '/modules/system/admin.php?fct=users';
