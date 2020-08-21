@@ -5,7 +5,8 @@
  */
 function b_waiting_catads()
 {
-    $block    = [];
+    $ret     = [];
+    $block   = [];
     $ads_hnd  = xoops_getModuleHandler('Ads', 'catads');
     $criteria = new \Criteria('waiting', '1', '=');
     $nbads    = $ads_hnd->getCount($criteria);
@@ -15,5 +16,7 @@ function b_waiting_catads()
         $block['lang_linkname'] = _PI_WAITING_WAITINGS;
     }
 
-    return $block;
+    $ret[] = $block;
+
+    return $ret;
 }

@@ -17,30 +17,33 @@ function b_waiting_tdmdownloads()
     /** @var \XoopsMySQLDatabase $xoopsDB */
     $xoopsDB = \XoopsDatabaseFactory::getDatabaseConnection();
     $ret     = [];
+
     // TDMdownloads waiting
     $block  = [];
     $result = $xoopsDB->query('SELECT COUNT(*) FROM ' . $xoopsDB->prefix('tdmdownloads_downloads') . ' WHERE status=0');
     if ($result) {
         $block['adminlink'] = XOOPS_URL . '/modules/TDMDownloads/admin/downloads.php?op=liste&statut_display=0';
-        list($block['pendingnum']) = $xoopsDB->fetchRow($result);
+        [$block['pendingnum']] = $xoopsDB->fetchRow($result);
         $block['lang_linkname'] = _PI_WAITING_WAITINGS;
     }
     $ret[] = $block;
+
     // TDMDownloads broken
     $block  = [];
     $result = $xoopsDB->query('SELECT COUNT(*) FROM ' . $xoopsDB->prefix('tdmdownloads_broken'));
     if ($result) {
         $block['adminlink'] = XOOPS_URL . '/modules/TDMDownloads/admin/broken.php';
-        list($block['pendingnum']) = $xoopsDB->fetchRow($result);
+        [$block['pendingnum']] = $xoopsDB->fetchRow($result);
         $block['lang_linkname'] = _PI_WAITING_BROKENS;
     }
     $ret[] = $block;
+
     // TDMDownloads modreq
     $block  = [];
     $result = $xoopsDB->query('SELECT COUNT(*) FROM ' . $xoopsDB->prefix('tdmdownloads_mod'));
     if ($result) {
         $block['adminlink'] = XOOPS_URL . '/modules/TDMDownloads/admin/modified.php';
-        list($block['pendingnum']) = $xoopsDB->fetchRow($result);
+        [$block['pendingnum']] = $xoopsDB->fetchRow($result);
         $block['lang_linkname'] = _PI_WAITING_MODREQS;
     }
     $ret[] = $block;

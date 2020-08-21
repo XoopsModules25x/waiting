@@ -23,7 +23,7 @@ function b_waiting_PDdownloads()
     $result = $xoopsDB->query('SELECT COUNT(*) FROM ' . $xoopsDB->prefix('PDdownloads_downloads') . ' WHERE status=0');
     if ($result) {
         $block['adminlink'] = XOOPS_URL . '/modules/PDdownloads/admin/newdownloads.php';
-        list($block['pendingnum']) = $xoopsDB->fetchRow($result);
+        [$block['pendingnum']] = $xoopsDB->fetchRow($result);
         $block['lang_linkname'] = _PI_WAITING_WAITINGS;
     }
     $ret[] = $block;
@@ -33,7 +33,7 @@ function b_waiting_PDdownloads()
     $result = $xoopsDB->query('SELECT COUNT(*) FROM ' . $xoopsDB->prefix('PDdownloads_broken'));
     if ($result) {
         $block['adminlink'] = XOOPS_URL . '/modules/PDdownloads/admin/brokendown.php';
-        list($block['pendingnum']) = $xoopsDB->fetchRow($result);
+        [$block['pendingnum']] = $xoopsDB->fetchRow($result);
         $block['lang_linkname'] = _PI_WAITING_BROKENS;
     }
     $ret[] = $block;
@@ -43,7 +43,7 @@ function b_waiting_PDdownloads()
     $result = $xoopsDB->query('SELECT COUNT(*) FROM ' . $xoopsDB->prefix('PDdownloads_mod'));
     if ($result) {
         $block['adminlink'] = XOOPS_URL . '/modules/PDdownloads/admin/modifications.php';
-        list($block['pendingnum']) = $xoopsDB->fetchRow($result);
+        [$block['pendingnum']] = $xoopsDB->fetchRow($result);
         $block['lang_linkname'] = _PI_WAITING_MODREQS;
     }
     $ret[] = $block;

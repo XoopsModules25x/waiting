@@ -1,10 +1,15 @@
+<h5>1.07 RC 2   [2020-08-20]</h5>  Dev: XOOPS 2.5.10, PHP 8.0 Beta 1
+<hr>
+- fix: Illegal string offset  (mamba)
+- cosmetics (mamba)
+- fix: hide empty modules (mamba)
+
+
 <h5>1.07 RC 1   [2020-08-20]</h5>  Dev: XOOPS 2.5.10, PHP 7.4.9
 <hr>
 - namespaces (mamba)
 - class autoloading (mamba)
 - cosmetics (mamba)
-WORK IN PROGRESS
-
 
 <h5>1.06 Beta 2  [2016-05-16]</h5>
 <hr>

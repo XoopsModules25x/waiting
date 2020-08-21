@@ -16,7 +16,7 @@ function b_waiting_weblinks()
         //      $block['adminlink'] = XOOPS_URL."/modules/weblinks/admin/index.php?op=listNewLinks";
         $block['adminlink'] = XOOPS_URL . '/modules/weblinks/admin/link_manage.php?op=listNewLinks';
 
-        list($block['pendingnum']) = $xoopsDB->fetchRow($result);
+        [$block['pendingnum']] = $xoopsDB->fetchRow($result);
         $block['lang_linkname'] = _PI_WAITING_WAITINGS;
     }
     $ret[] = $block;
@@ -26,7 +26,7 @@ function b_waiting_weblinks()
     $result = $xoopsDB->query('SELECT COUNT(*) FROM ' . $xoopsDB->prefix('weblinks_broken'));
     if ($result) {
         $block['adminlink'] = XOOPS_URL . '/modules/weblinks/admin/index.php?op=listBrokenLinks';
-        list($block['pendingnum']) = $xoopsDB->fetchRow($result);
+        [$block['pendingnum']] = $xoopsDB->fetchRow($result);
         $block['lang_linkname'] = _PI_WAITING_BROKENS;
     }
     $ret[] = $block;
@@ -38,7 +38,7 @@ function b_waiting_weblinks()
         //      $block['adminlink'] = XOOPS_URL."/modules/weblinks/admin/index.php?op=listModReq";
         $block['adminlink'] = XOOPS_URL . '/modules/weblinks/admin/link_manage.php?op=listModReq';
 
-        list($block['pendingnum']) = $xoopsDB->fetchRow($result);
+        [$block['pendingnum']] = $xoopsDB->fetchRow($result);
         $block['lang_linkname'] = _PI_WAITING_MODREQS;
     }
     $ret[] = $block;

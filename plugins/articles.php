@@ -7,14 +7,17 @@ function b_waiting_articles()
 {
     /** @var \XoopsMySQLDatabase $xoopsDB */
     $xoopsDB = \XoopsDatabaseFactory::getDatabaseConnection();
+    $ret     = [];
     $block   = [];
 
     $result = $xoopsDB->query('SELECT COUNT(*) FROM ' . $xoopsDB->prefix('articles_main') . ' WHERE art_validated = 0');
     if ($result) {
         $block['adminlink'] = XOOPS_URL . '/modules/articles/admin/validate.php';
-        list($block['pendingnum']) = $xoopsDB->fetchRow($result);
+        [$block['pendingnum']] = $xoopsDB->fetchRow($result);
         $block['lang_linkname'] = _PI_WAITING_SUBMITTED;
     }
 
-    return $block;
+    $ret[] = $block;
+
+    return $ret;
 }

@@ -8,6 +8,7 @@ function b_waiting_yomi()
     $log_path      = XOOPS_ROOT_PATH . '/modules/yomi/log/';
     $log_file      = 'ys4_temp.cgi';
     $lang_linkname = 'Yomi';
+    $ret     = [];
     $block         = [];
     $cTemp         = 0;
     $fp            = fopen("{$log_path}{$log_file}", 'rb');
@@ -25,5 +26,7 @@ function b_waiting_yomi()
         ];
     }
 
-    return $block;
+    $ret[] = $block;
+
+    return $ret;
 }

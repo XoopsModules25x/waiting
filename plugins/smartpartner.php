@@ -9,15 +9,18 @@ function b_waiting_smartpartner()
 {
     /** @var \XoopsMySQLDatabase $xoopsDB */
     $xoopsDB = \XoopsDatabaseFactory::getDatabaseConnection();
+    $ret     = [];
     $block   = [];
 
     // smartpartner submitted
     $result = $xoopsDB->query('SELECT COUNT(*) FROM ' . $xoopsDB->prefix('smartpartner_partner') . ' WHERE status=1');
     if ($result) {
         $block['adminlink'] = XOOPS_URL . '/modules/smartpartner/admin/index.php?statussel=1';
-        list($block['pendingnum']) = $xoopsDB->fetchRow($result);
+        [$block['pendingnum']] = $xoopsDB->fetchRow($result);
         $block['lang_linkname'] = _PI_WAITING_SUBMITTED;
     }
 
-    return $block;
+    $ret[] = $block;
+
+    return $ret;
 }
