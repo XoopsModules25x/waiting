@@ -28,7 +28,7 @@ require_once __DIR__ . '/preloads/autoloader.php';
 $moduleDirName                     = basename(__DIR__);
 
 $modversion['version']             = 1.07;
-$modversion['module_status']       = 'RC1';
+$modversion['module_status']       = 'RC-2';
 $modversion['release_date']        = '2020/08/20';
 $modversion['name']                = _MI_WAITING_NAME;
 $modversion['description']         = _MI_WAITING_DESC;
@@ -72,10 +72,10 @@ $modversion['blocks'][1]['name']        = _MI_WAITING_BNAME1;
 $modversion['blocks'][1]['description'] = _MI_WAITING_BNAME1_DESC;
 $modversion['blocks'][1]['show_func']   = 'b_waiting_waiting_show';
 $modversion['blocks'][1]['edit_func']   = 'b_waiting_waiting_edit';
-$modversion['blocks'][1]['template']    = 'waiting_block_waiting.html';
+$modversion['blocks'][1]['template']    = 'waiting_block_waiting.tpl';
 $modversion['blocks'][1]['options']     = '1|5';
 
 // On Update
 if (!empty($_POST['fct']) && !empty($_POST['op']) && 'modulesadmin' === $_POST['fct'] && 'update_ok' === $_POST['op'] && $_POST['module'] == $moduleDirName) {
-    require_once __DIR__ . '/include/updateblock.inc.php';
+    require __DIR__ . '/include/updateblock.inc.php';
 }
