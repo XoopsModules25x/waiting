@@ -3,7 +3,8 @@
 - fix: Illegal string offset  (mamba)
 - cosmetics (mamba)
 - fix: hide empty modules (mamba)
-
+- added plugin for wggallery (goffy)
+- added plugin for wgtransifex (goffy)
 
 <h5>1.07 RC 1   [2020-08-20]</h5>  Dev: XOOPS 2.5.10, PHP 7.4.9
 <hr>
