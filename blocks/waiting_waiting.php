@@ -47,9 +47,9 @@ function b_waiting_waiting_show($options)
         $sql_cache_mtime = filemtime($sql_cache_file);
         if (time() < $sql_cache_mtime + $sql_cache_min * 60) {
             return [];
-        } else {
-            unlink($sql_cache_file);
         }
+
+        unlink($sql_cache_file);
     }
 
     require_once dirname(__DIR__) . '/include/functions.php';
