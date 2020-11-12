@@ -1,3 +1,9 @@
+<h5>1.07 Final   [2020-11-11]</h5>  Dev: XOOPS 2.5.10, PHP 7.4.12, PHP 8.0 RC-3
+<hr>
+- index.html to index.php (mamba)
+- cosmetics (mamba)
+
+
 <h5>1.07 RC 2   [2020-08-20]</h5>  Dev: XOOPS 2.5.10, PHP 8.0 Beta 1
 <hr>
 - fix: Illegal string offset  (mamba)
