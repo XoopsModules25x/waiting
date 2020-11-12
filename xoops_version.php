@@ -25,11 +25,11 @@
  */
 require_once __DIR__ . '/preloads/autoloader.php';
 
-$moduleDirName                     = basename(__DIR__);
+$moduleDirName = basename(__DIR__);
 
 $modversion['version']             = 1.07;
-$modversion['module_status']       = 'RC-2';
-$modversion['release_date']        = '2020/08/20';
+$modversion['module_status']       = 'Final';
+$modversion['release_date']        = '2020/11/11';
 $modversion['name']                = _MI_WAITING_NAME;
 $modversion['description']         = _MI_WAITING_DESC;
 $modversion['author']              = 'Ryuji (http://ryus.co.jp/)';
@@ -45,7 +45,7 @@ $modversion['modicons16']          = 'assets/images/icons/16';
 $modversion['modicons32']          = 'assets/images/icons/32';
 $modversion['module_website_url']  = 'www.xoops.org/';
 $modversion['module_website_name'] = 'XOOPS';
-$modversion['min_php']             = '7.1';
+$modversion['min_php']             = '7.2';
 $modversion['min_xoops']           = '2.5.10';
 $modversion['min_admin']           = '1.2';
 $modversion['min_db']              = ['mysql' => '5.5'];

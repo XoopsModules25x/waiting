@@ -70,8 +70,7 @@ function xoops_module_update_waiting(\XoopsModule $module, $previousVersion = nu
     $moduleDirName      = basename(dirname(__DIR__));
     $moduleDirNameUpper = mb_strtoupper($moduleDirName);
 
-    /** @var \XoopsModules\Waiting\Helper $helper */ 
-    /** @var \XoopsModules\Waiting\Utility $utility */
+    /** @var \XoopsModules\Waiting\Helper $helper */ /** @var \XoopsModules\Waiting\Utility $utility */
     /** @var \XoopsModules\Waiting\Common\Configurator $configurator */
     $helper       = Helper::getInstance();
     $utility      = new \XoopsModules\Waiting\Utility();
@@ -153,8 +152,8 @@ function xoops_module_update_waiting(\XoopsModule $module, $previousVersion = nu
         $sql = 'DELETE FROM ' . $GLOBALS['xoopsDB']->prefix('tplfile') . " WHERE `tpl_module` = '" . $module->getVar('dirname', 'n') . '\' AND `tpl_file` LIKE \'%.html%\'';
         $GLOBALS['xoopsDB']->queryF($sql);
 
-    /** @var \XoopsGroupPermHandler $grouppermHandler */
-$grouppermHandler = xoops_getHandler('groupperm');
+        /** @var \XoopsGroupPermHandler $grouppermHandler */
+        $grouppermHandler = xoops_getHandler('groupperm');
 
         return $grouppermHandler->deleteByModule($module->getVar('mid'), 'item_read');
     }

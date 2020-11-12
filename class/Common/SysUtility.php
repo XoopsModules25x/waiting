@@ -26,10 +26,8 @@ namespace XoopsModules\Waiting\Common;
 use MyTextSanitizer;
 use XoopsFormDhtmlTextArea;
 use XoopsFormTextArea;
-use XoopsModules\Waiting\{
-    Helper
+use XoopsModules\Waiting\{Helper
 };
-
 
 /**
  * Class SysUtility
