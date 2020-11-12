@@ -35,7 +35,6 @@ function xoops_module_uninstall_waiting(\XoopsModule $module)
 
     $moduleDirName      = basename(dirname(__DIR__));
     $moduleDirNameUpper = mb_strtoupper($moduleDirName);
-    /** @var \XoopsModules\Waiting\Helper $helper */
     $helper = Helper::getInstance();
 
     $utility = new Utility();

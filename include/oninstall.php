@@ -60,7 +60,6 @@ function xoops_module_install_waiting(\XoopsModule $module)
 
     $moduleDirName = basename(dirname(__DIR__));
 
-    /** @var \XoopsModules\Waiting\Helper $helper */
     $helper       = Helper::getInstance();
     $utility      = new Utility();
     $configurator = new Waiting\Common\Configurator();

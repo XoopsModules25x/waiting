@@ -26,7 +26,6 @@ use XoopsModules\Waiting;
 use XoopsModules\Waiting\Helper;
 
 //require_once  dirname(__DIR__) . '/include/common.php';
-/** @var \XoopsModules\Waiting\Helper $helper */
 $helper = Helper::getInstance();
 $helper->loadLanguage('common');
 $helper->loadLanguage('feedback');
