@@ -20,6 +20,7 @@
 use Xmf\Database\Tables;
 use XoopsModules\Waiting\Common\Configurator;
 use XoopsModules\Waiting\Helper;
+use XoopsModules\Waiting\Utility;
 
 if ((!defined('XOOPS_ROOT_PATH')) || !($GLOBALS['xoopsUser'] instanceof \XoopsUser)
     || !$GLOBALS['xoopsUser']->isAdmin()) {
@@ -50,7 +51,7 @@ function xoops_module_pre_update_waiting(\XoopsModule $module)
     /** @var \XoopsModules\Waiting\Helper $helper */
     /** @var \XoopsModules\Waiting\Utility $utility */
     $helper  = Helper::getInstance();
-    $utility = new \XoopsModules\Waiting\Utility();
+    $utility = new Utility();
 
     $xoopsSuccess = $utility::checkVerXoops($module);
     $phpSuccess   = $utility::checkVerPhp($module);
@@ -73,7 +74,7 @@ function xoops_module_update_waiting(\XoopsModule $module, $previousVersion = nu
     /** @var \XoopsModules\Waiting\Helper $helper */ /** @var \XoopsModules\Waiting\Utility $utility */
     /** @var \XoopsModules\Waiting\Common\Configurator $configurator */
     $helper       = Helper::getInstance();
-    $utility      = new \XoopsModules\Waiting\Utility();
+    $utility      = new Utility();
     $configurator = new Configurator();
 
     if ($previousVersion < 240) {

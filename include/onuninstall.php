@@ -9,6 +9,7 @@
  */
 
 use XoopsModules\Waiting\Helper;
+use XoopsModules\Waiting\Utility;
 
 /**
  * Prepares system prior to attempting to uninstall module
@@ -37,7 +38,7 @@ function xoops_module_uninstall_waiting(\XoopsModule $module)
     /** @var \XoopsModules\Waiting\Helper $helper */
     $helper = Helper::getInstance();
 
-    $utility = new \XoopsModules\Waiting\Utility();
+    $utility = new Utility();
 
     $success = true;
     $helper->loadLanguage('admin');
