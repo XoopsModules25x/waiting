@@ -4,6 +4,7 @@ namespace XoopsModules\Waiting;
 
 use XoopsModules\Waiting;
 use XoopsModules\Waiting\Common;
+
 //use XoopsModules\Waiting\Constants;
 
 /**

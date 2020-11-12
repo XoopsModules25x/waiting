@@ -19,6 +19,7 @@
 
 use XoopsModules\Waiting;
 use XoopsModules\Waiting\Helper;
+use XoopsModules\Waiting\Utility;
 
 //require_once __DIR__ . '/setup.php';
 
@@ -32,7 +33,7 @@ function xoops_module_pre_install_waiting(\XoopsModule $module)
 {
     require_once dirname(__DIR__) . '/preloads/autoloader.php';
     /** @var \Utility $utility */
-    $utility      = new \XoopsModules\Waiting\Utility();
+    $utility      = new Utility();
     $xoopsSuccess = $utility::checkVerXoops($module);
     $phpSuccess   = $utility::checkVerPhp($module);
 
@@ -59,9 +60,8 @@ function xoops_module_install_waiting(\XoopsModule $module)
 
     $moduleDirName = basename(dirname(__DIR__));
 
-    /** @var \XoopsModules\Waiting\Helper $helper */
     $helper       = Helper::getInstance();
-    $utility      = new Waiting\Utility();
+    $utility      = new Utility();
     $configurator = new Waiting\Common\Configurator();
     // Load language files
     $helper->loadLanguage('admin');
@@ -71,7 +71,7 @@ function xoops_module_install_waiting(\XoopsModule $module)
     global $xoopsModule;
     $moduleId = $xoopsModule->getVar('mid');
     /** @var \XoopsGroupPermHandler $grouppermHandler */
-$grouppermHandler = xoops_getHandler('groupperm');
+    $grouppermHandler = xoops_getHandler('groupperm');
     // access rights ------------------------------------------
     $grouppermHandler->addRight($moduleDirName . '_approve', 1, XOOPS_GROUP_ADMIN, $moduleId);
     $grouppermHandler->addRight($moduleDirName . '_submit', 1, XOOPS_GROUP_ADMIN, $moduleId);

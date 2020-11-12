@@ -15,6 +15,9 @@
  
 use XoopsModules\Wggallery\Constants;
 
+/**
+ * @return array
+ */
 function b_waiting_wggallery()
 {
     /** @var \XoopsMySQLDatabase $xoopsDB */

@@ -9,6 +9,7 @@
  */
 
 use XoopsModules\Waiting\Helper;
+use XoopsModules\Waiting\Utility;
 
 /**
  * Prepares system prior to attempting to uninstall module
@@ -34,10 +35,9 @@ function xoops_module_uninstall_waiting(\XoopsModule $module)
 
     $moduleDirName      = basename(dirname(__DIR__));
     $moduleDirNameUpper = mb_strtoupper($moduleDirName);
-    /** @var \XoopsModules\Waiting\Helper $helper */
     $helper = Helper::getInstance();
 
-    $utility = new \XoopsModules\Waiting\Utility();
+    $utility = new Utility();
 
     $success = true;
     $helper->loadLanguage('admin');

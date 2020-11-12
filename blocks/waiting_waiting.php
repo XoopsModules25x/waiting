@@ -24,8 +24,8 @@
  */
 
 use Xmf\Request;
-use XoopsModules\Waiting\{
-    Helper};
+use XoopsModules\Waiting\{Helper
+};
 
 /** @var Helper $helper */
 
@@ -47,9 +47,9 @@ function b_waiting_waiting_show($options)
         $sql_cache_mtime = filemtime($sql_cache_file);
         if (time() < $sql_cache_mtime + $sql_cache_min * 60) {
             return [];
-        } else {
-            unlink($sql_cache_file);
         }
+
+        unlink($sql_cache_file);
     }
 
     require_once dirname(__DIR__) . '/include/functions.php';
@@ -83,8 +83,7 @@ function b_waiting_waiting_show($options)
             // get the list of waitings
             $_tmp = call_user_func($plugin_info['func'], $dirname);
             if (isset($_tmp['lang_linkname'])) {
-                if (@$_tmp['pendingnum'] > 0
-//                    || $options[0] > 0
+                if (@$_tmp['pendingnum'] > 0//                    || $options[0] > 0
                 ) {
                     $block['modules'][$dirname]['pending'][] = $_tmp;
                 }
@@ -92,12 +91,12 @@ function b_waiting_waiting_show($options)
             } else {
                 // Judging the plugin returns multiple items
                 // if lang_linkname does not exist
-                foreach ($_tmp as $_one) {
-                    if ((int)$_one['pendingnum'] > 0
-//                        || (int)$options[0] > 0
-                        )
-                    {
-                        $block['modules'][$dirname]['pending'][] = $_one;
+                if (is_array($_tmp)) {
+                    foreach ($_tmp as $_one) {
+                        if (isset($_one['pendingnum']) && (int)$_one['pendingnum'] > 0   //                        || (int)$options[0] > 0
+                        ) {
+                            $block['modules'][$dirname]['pending'][] = $_one;
+                        }
                     }
                 }
             }
@@ -106,20 +105,20 @@ function b_waiting_waiting_show($options)
         // for older compatibilities
         // Hacked by GIJOE
 
-//        $i = 0;
-//        while (1) {
-//            $function_name = "b_waiting_{$dirname}_$i";
-//            if (function_exists($function_name)) {
-//                $_tmp = call_user_func($function_name);
-//                ++$i;
-//                if ((int)$_tmp['pendingnum'] > 0 || $options[0] > 0) {
-//                    $block['modules'][$dirname]['pending'][] = $_tmp;
-//                }
-//                unset($_tmp);
-//            } else {
-//                break;
-//            }
-//        }
+        //        $i = 0;
+        //        while (1) {
+        //            $function_name = "b_waiting_{$dirname}_$i";
+        //            if (function_exists($function_name)) {
+        //                $_tmp = call_user_func($function_name);
+        //                ++$i;
+        //                if ((int)$_tmp['pendingnum'] > 0 || $options[0] > 0) {
+        //                    $block['modules'][$dirname]['pending'][] = $_tmp;
+        //                }
+        //                unset($_tmp);
+        //            } else {
+        //                break;
+        //            }
+        //        }
 
         // End of Hack
 
@@ -128,8 +127,8 @@ function b_waiting_waiting_show($options)
             $block['modules'][$dirname]['name'] = $name;
         }
     }
-//    print_r($block);
-//    var_dump($block);
+    //    print_r($block);
+    //    var_dump($block);
 
     // SQL cache touch (you have to use this cache with block's cache by system)
     if (empty($block) && $sql_cache_min > 0) {

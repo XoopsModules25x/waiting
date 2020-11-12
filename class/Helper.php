@@ -19,6 +19,7 @@ namespace XoopsModules\Waiting;
  * @since
  * @author       XOOPS Development Team
  */
+
 /**
  * Class Helper
  */

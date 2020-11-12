@@ -15,6 +15,9 @@
  
 use XoopsModules\Wgtransifex\Constants;
 
+/**
+ * @return array
+ */
 function b_waiting_wgtransifex()
 {
     /** @var \XoopsMySQLDatabase $xoopsDB */
