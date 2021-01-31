@@ -39,3 +39,8 @@ define('_PI_WAITING_ASKED', 'Asked');
 define('_PI_WAITING_NEWANSWERS', 'New Answers');
 define('_PI_WAITING_ANSWERED', 'Answered');
 define('_PI_WAITING_WAITINGS_FMT', 'Waitings (%s)');
+define('_PI_WAITING_CONTACT', 'Contact pending response');
+define('_PI_WAITING_NEWS', 'News awaiting validation');
+define('_PI_WAITING_DOC', 'Deactivated documents');
+define('_PI_WAITING_CONTENT', 'Disabled content');
+define('_PI_WAITING_TUTORIAL', 'Disabled tutorials');
