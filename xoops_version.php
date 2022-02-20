@@ -27,9 +27,9 @@ require_once __DIR__ . '/preloads/autoloader.php';
 
 $moduleDirName = basename(__DIR__);
 
-$modversion['version']             = 1.07;
-$modversion['module_status']       = 'Final';
-$modversion['release_date']        = '2020/11/11';
+$modversion['version']             = '1.7.1';
+$modversion['module_status']       = 'Beta 1';
+$modversion['release_date']        = '2022/02/20';
 $modversion['name']                = _MI_WAITING_NAME;
 $modversion['description']         = _MI_WAITING_DESC;
 $modversion['author']              = 'Ryuji (http://ryus.co.jp/)';
